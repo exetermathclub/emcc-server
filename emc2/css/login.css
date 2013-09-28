@@ -1,0 +1,24 @@
+.field_wrapper {
+    padding: 5px;
+}
+
+.field_label {
+    display: inline-block;
+    width: 150px;
+}
+
+input.field {
+    height: 25px;
+    width: 200px;
+    border: 1px solid black;
+}
+
+button.field {
+    font-size: 17px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+button {
+    font-family: "Times New Roman", serif;
+}

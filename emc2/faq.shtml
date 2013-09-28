@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Frequently Asked Questions</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/emcc.css">
+        <link rel="stylesheet" type="text/css" href="css/faq.css">
+        
+        <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
+        
+        <!-- Google Analytics -->
+        <script type="text/javascript">
+             (function(i, s, o, g, r, a, m) {
+                 i['GoogleAnalyticsObject'] = r;
+                 i[r] = i[r] ||
+                 function() {
+                     (i[r].q = i[r].q || []).push(arguments)
+                 }, i[r].l = 1 * new Date();
+                 a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                 a.async = 1;
+                 a.src = g;
+                 m.parentNode.insertBefore(a, m)
+             })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+             ga('create', 'UA-38541594-3', 'exeter.edu');
+             ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+<!--#include virtual="bars.html" -->
+        <div id="content">
+            <div class="post_title">General</div>
+            <div class="post">
+                <div class="question">Q: How do I get to Exeter?</div>
+                <p>
+                    A: You can find driving directions as well as a copy of Exeter's campus map <a href="http://www.exeter.edu/about_us/171_240.aspx">here</a>. The competition will be held in the Academy Building on Tan Lane.
+                </p>
+                <div class="question">Q: Where can I park on campus?</div>
+                <p>
+                    A: Visitors to the Academy may park in the semi-circle in front of Jeremiah Smith Hall, in front of and behind Admissions (Bissell House), in any parking lot with assigned visitor parking and on nearby public streets. The closest parking for EMC2 participants is the roadside parking on Front Street, Tan Lane, and other public streets nearby.
+                </p>
+                <p>
+                    <b>Campus map</b> is available <a href="http://www.exeter.edu/media/content/accessible10.2010.pdf">here</a>.
+                </p>
+                <p>
+                    We will also provide some buses to/from the airport and hotels for those who are flying in. Please see <a href="contest_information#Transportation">here</a> for more details and pickup times.
+                </p>
+                <div class="question">Q: What happens if I arrive late?</div>
+                <p>
+                    A: If necessary, we will push back the start time of the competition in order to account for bad weather. Otherwise, you will need to wait for the start of the next round to join the competition.
+                </p>
+                <div class="question">Q: Is lunch included?</div>
+                <p>
+                    A: A pizza lunch for students and coaches is included in the price of registration.
+                </p>
+                <div class="question">Q: How many coaches and/or parents can come?</div>
+                <p>
+                    A: We welcome all coaches and parents who would like to come, and they will be able to watch their students compete during the guts round. In addition, we will provide a setting for parents and coaches to wait and mingle while students are taking the earlier rounds.
+                </p>
+            </div>
+            <div class="post_title">Contests</div>
+            <div class="post">
+                <div class="question">Q: What topics will be included in the contest?</div>
+                <p>
+                    A: The contest is based on the concepts taught in middle and elementary schools, but extends and expands upon those. General areas that will be covered include counting and probability, geometry, and basic algebra.
+                </p>
+                <div class="question">Q: How hard would the contest be?</div>
+                <p>
+                    A: The contest will include problems approachable to students of all skill levels, from the young novice fresh out of elementary school to the veteran 8th grade student already competing at the high-school level. While all the problems can be solved using middle-school level mathematics, there will certainly be problems difficult enough that we expect only the top competitors to solve them.
+                </p>
+                <div class="question">Q: Are calculators allowed?</div>
+                <p>
+                    A: No. Calculators are prohibited for the entirety of the contest. All of the problems on the contest can be solved without the usage of computational aids. 
+                <p>
+            </div>
+            <div class="post_title">Miscellaneous</div>
+            <div class="post">
+                <div class="question">Q: How can we contact you if we have any questions?</div>
+                <p>
+                    A: You can send us an e-mail at <a href="mailto:emcc2014@gmail.com">emcc2014@gmail.com</a>. We will get back to you as quickly as possible.
+                </p>
+                <div class="question">Q: I am interested in applying to Phillips Exeter Academy. If I or my team wins the competition, will I be admitted to Exeter?</div>
+                <p>
+                    A: Not necessarily. It's great that you'd like to come to Exeter, and we encourage you to put your participation and results at the EMCC in your application. However, the Admission Office evaluates each and every applicant as a whole, and doing well at this competition may not help you get accepted, or even get waitlisted, into Exeter any more than doing well or winning any other math competition will.
+                </p>
+            </div>
+        </div>
+<!--#include virtual="footer.html" -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript">
+            $("#archive_link").click(function () {
+                "use strict";
+                var secobj = $("#archive_section");
+                if (secobj.css("display") !== "block") {
+                    secobj.show();
+                } else {
+                    secobj.hide();
+                }
+            });
+        </script>
+    </body>
+</html>

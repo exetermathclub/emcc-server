@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Exeter Math Club Competition - Online Tournament</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/emcc.css">
+        
+        <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
+        
+        <!-- Google Analytics -->
+        <script type="text/javascript">
+             (function(i, s, o, g, r, a, m) {
+                 i['GoogleAnalyticsObject'] = r;
+                 i[r] = i[r] ||
+                 function() {
+                     (i[r].q = i[r].q || []).push(arguments)
+                 }, i[r].l = 1 * new Date();
+                 a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                 a.async = 1;
+                 a.src = g;
+                 m.parentNode.insertBefore(a, m)
+             })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+             ga('create', 'UA-38541594-3', 'exeter.edu');
+             ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+<!--#include virtual="bars.html" -->
+        <div id="content">
+            <div class="post_title">
+                Online Tournament
+            </div>
+            EMCC online tournament registration will be available here soon.
+        </div>
+<!--#include virtual="footer.html" -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript">
+            $("#archive_link").click(function () {
+                "use strict";
+                var secobj = $("#archive_section");
+                if (secobj.css("display") !== "block") {
+                    secobj.show();
+                } else {
+                    secobj.hide();
+                }
+            });
+        </script>
+    </body>
+</html>

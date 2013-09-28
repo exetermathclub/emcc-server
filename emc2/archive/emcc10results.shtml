@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>2010 Competition Results</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../css/main.css">
+        <link rel="stylesheet" type="text/css" href="../css/emcc.css">
+        <link rel="stylesheet" type="text/css" href="../css/archive.css">
+        
+        <script type="text/javascript" src="../js/vendor/modernizr-2.6.2.min.js"></script>
+        
+        <!-- Google Analytics -->
+        <script type="text/javascript">
+             (function(i, s, o, g, r, a, m) {
+                 i['GoogleAnalyticsObject'] = r;
+                 i[r] = i[r] ||
+                 function() {
+                     (i[r].q = i[r].q || []).push(arguments)
+                 }, i[r].l = 1 * new Date();
+                 a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                 a.async = 1;
+                 a.src = g;
+                 m.parentNode.insertBefore(a, m)
+             })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+             ga('create', 'UA-38541594-3', 'exeter.edu');
+             ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+<!--#include virtual="bars.html" -->
+        <div id="content">
+            <div class="post_title">2010 Competition Results</div>
+            <div class="post">
+                <p>Jump to:</p>
+                <ul>
+                    <li><a href="#2010Sweeps">Top Overall Teams</a></li>
+                    <li><a href="#2010Indiv">Top Individuals</a></li>
+                    <li><a href="#2010Team">Top Team Round Teams</a></li>
+                    <li><a href="#2010Guts">Top Guts Round Teams</a></li>
+                </ul>
+            <h3><a name="2010Sweeps"></a>Top Overall Teams (Sweepstakes)</h3>
+            <ol>
+              <li>
+              <b>Clarke A</b> - Jonas Clarke Middle School
+              </li> <li>
+              <b>Tiger</b> - Idea Math
+              </li> <li>
+              <b>Bigelow MS</b> - Bigelow Middle School
+              </li> <li>
+              <b>Bear</b> - Idea Math
+              </li> <li>
+              <b>Eaglebrook #1</b> - Eaglebrook School  
+              </li> <li>
+              <b>Clarke B</b> - Jonas Clarke Middle School  
+              </li> <li>
+              <b>The Wombats</b> - EMC2 Individuals Team  
+              </li> <li>
+              <b>Eaglebrook #2</b> - Eaglebrook School
+              </li> <li>
+              <b>CCLS</b> - Century Chinese Language School
+              </li> <li>
+              <b>Lincoln Logs</b> - Lincoln Middle School
+              </li>
+            </ol>
+
+            <h3><a name="2010Indiv"></a>Top Individual Scorers</h3>
+
+            <ol>
+              <li>
+              <b>Jonathan Tidor</b> - Clarke A
+              </li> <li>
+              <b>Yanson Chang</b> - Tiger
+              </li> <li>
+              <b>Nihal Gowravaram</b> - Tiger
+              </li> <li>
+              <b>Celina Hsieh</b> - Clarke A
+              </li> <li>
+              <b>Katie Fraser</b> - Clarke A
+              </li> <li>
+              <b>Niket Gowravaram</b> - Bear
+              </li> <li>
+              <b>Ying Gao</b> - Bigelow MS
+              </li> <li>
+              <b>Anna Ellison</b> - Bigelow MS
+              </li> <li>
+              <b>JJ Kim</b> - Eaglebrook #1
+              </li> <li>
+              <b>Rohil Prasad</b> - Clarke A
+              </li>
+            </ol>
+
+            <h3><a name="2010Team"></a>Top Team Round Teams</h3>
+
+            <ol>
+              <li>
+              <b>Clarke A</b> - Jonas Clarke Middle School
+              </li> <li>
+              <b>Bear</b> - Idea Math
+              </li> <li>
+              <b>Tiger</b> - Idea Math
+              </li> <li>
+              <b>Bigelow MS</b> - Bigelow Middle School
+              </li> <li>
+              <b>Eaglebrook #1</b> - Eaglebrook School
+              </li> <li>
+              <b>Clarke B</b> - Jonas Clarke Middle School
+              </li> <li>
+              <b>Eaglebrook #2</b> - Eaglebrook School
+              </li> <li>
+              <b>The Wombats</b> - EMC2 Individuals Team
+              </li> <li>
+              <b>Lincoln Logs</b> - Lincoln Middel School
+              </li> <li>
+              <b>CCLS</b> - Century Chinese Language School
+              </li>
+            </ol>
+
+            <h3><a name="2010Guts"></a>Top Guts Round Teams</h3>
+
+            <ol>
+              <li>
+              <b>Bigelow MS</b> - Bigelow Middle School
+              </li> <li>
+              <b>Clarke A</b> - Jonas Clarke Middle School
+              </li> <li>
+              <b>Tiger</b> - Idea Math
+              </li> <li>
+              <b>The Wombats</b> - EMC2 Individuals Team
+              </li> <li>
+              <b>Eaglebrook #1</b> - Eaglebrook Middle School
+              </li> <li>
+              <b>Bear</b> - Idea Math
+              </li> <li>
+              <b>Clarke B</b> - Jonas Clarke Middle School
+              </li> <li>
+              <b>Lincoln Logs</b> - Loncoln Middle School
+              </li> <li>
+              <b>Eaglebrook #2</b> - Eaglebrook School
+              </li> <li>
+              <b>CCLS</b> - Century Chinese Language School
+              </li>
+            </ol>
+
+            </div>
+        </div>
+<!--#include virtual="footer.html" -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script type="text/javascript" src="../js/plugins.js"></script>
+        <script type="text/javascript" src="../js/main.js"></script>
+        <script type="text/javascript">
+            $("#archive_link").click(function () {
+                "use strict";
+                var secobj = $("#archive_section");
+                if (secobj.css("display") !== "block") {
+                    secobj.show();
+                } else {
+                    secobj.hide();
+                }
+            });
+        </script>
+    </body>
+</html>

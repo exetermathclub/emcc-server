@@ -1,0 +1,593 @@
+  138  cp frame_bottom-dev.php frame_bottom.php
+  139  cp frame_bottom-dev.php frame_bottom.php
+  140  cp frame_bottom-dev.php frame_bottom.php
+  141  cp frame_bottom-dev.php frame_bottom.php
+  142  exit
+  143  cd emc2
+  144  dir
+  145  cd public_html/
+  146  cd emc2
+  147  dir
+  148  cp frame_bottom-dev.php frame_bottom.php
+  149  cp information-dev.php information.php
+  150  cp registration.php registration-enabled-20110119.php
+  151  cp registration-disabled.php registratin.php
+  152  dir manage*
+  153  cp registration-dev.php registration.php
+  154  cp index-dev.php index.php
+  155  cp index-dev.php index.php
+  156  exit
+  157  cd public_html/
+  158  dir
+  159  cd emc2
+  160  dir
+  161  cp registration-dev.php registration.php
+  162  exit
+  163  dir
+  164  cd public_html/
+  165  dir
+  166  cd emc2
+  167  dir
+  168  cp scores-guts.php scores-guts-old.php
+  169  cp socres-guts-dev.php scores-guts.php
+  170  cp scores-guts-dev.php scores-guts.php
+  171  cp guts-board.php guts-board-old.php
+  172  cp guts-board-dev.php guts-board.dev
+  173  cp guts-board-dev.php guts-board.php
+  174  rm guts-board.dev
+  175  exit
+  176  cd emc2db_dump
+  177  cd ..
+  178  cd emc2
+  179  cd pub
+  180  dir
+  181  cd mathclub
+  182  dir
+  183  ce public_html/
+  184  cd public_html/
+  185  dir
+  186  cd emc2
+  187  cp team-scores.php team-scores-bak.php
+  188  cp team-scores-dev.php team-scores.php
+  189  cp team-scores-bak.php team-scores.php
+  190  cp score-report.php score-report-bak.php
+  191  cp score-report-dev.php score-report.php
+  192  ls
+  193  ls
+  194  cd public_html/
+  195  ls
+  196  ls
+  197  mysql -umathclub_admin -p
+  198  cd public_html/
+  199  dit
+  200  dir
+  201  cd emc2
+  202  cp manage.php manage-undisabled.php
+  203  cp manage-dev.php manage.php
+  204  cd public_html/
+  205  dir
+  206  cd emc2
+  207  dir
+  208  cp information-dev.php information.php
+  209  emc2
+  210  emc2
+  211  dir
+  212  cd emc2
+  213  cd public_html
+  214  cd emc2
+  215  dir
+  216  cp scores-team-dev.php scores-team.php
+  217  dir
+  218  cd public_html
+  219  cd emc2
+  220  dir
+  221  vi guts-board.php
+  222  x
+  223  help
+  224  exit
+  225  cd public_html/
+  226  cd emc2/
+  227  dir
+  228  cp guts-scoreboard.php guts-scoreboard-old.php
+  229  cp guts-score.php guts-score-old.php
+  230  cp guts-board.php guts-board-old.php
+  231  cp guts-scoreboard.php guts-board.php
+  232  cp guts-scoreboard-dev.php guts-board.php
+  233  cp guts-board-old.php guts-board.php
+  234  cp guts-board-dev.php guts-board.php
+  235  vi guts-board-dev.php
+  236  cp guts-board-dev.php guts-board.php
+  237  cd public_html/
+  238  cd emc2/
+  239  dir
+  240  cp score-report.php score-report-bak.php
+  241  cp score-report-dev.php score-report-dev.php
+  242  cp score-report-dev.php score-report.php
+  243  exit
+  244  ls
+  245  ls
+  246  mysql -umathclub_admin -
+  247  mysql -umathclub_admin -p
+  248  ls
+  249  cd public_html/
+  250  ls
+  251  cd emc2/
+  252  ls
+  253  vim guts-board
+  254  vim guts-board.php
+  255  exit
+  256  ls
+  257  cd public_html/
+  258  ls
+  259  cd emc2/
+  260  ls
+  261  vim information
+  262  vim information.php
+  263  mysql -umathclub_admin -p
+  264  mysql -umathclub_admin -p
+  265  ls
+  266  vim sy
+  267  vim styles
+  268  vim styles.css
+  269  exit
+  270  ls
+  271  cd public_html/
+  272  ls
+  273  cd emc2/
+  274  ls
+  275  vim styles.php
+  276  ls
+  277  vim styles.css
+  278  vim scores-guts.php
+  279  vim sc
+  280  vim scores-guts-dev.php
+  281  vim scores-guts.php
+  282  vim styles
+  283  vim styles.css
+  284  ls
+  285  vim guts-board.php
+  286  dir
+  287  public_html/
+  288  dir
+  289  cd public_html/
+  290  dir
+  291  cd emc2
+  292  dir
+  293  cd resources
+  294  dir
+  295  cd //
+  296  cd pictures
+  297  dir
+  298  cd ..
+  299  dir /s pictures
+  300  dir
+  301  cd ..
+  302  dir
+  303  dir /s*.jpg
+  304  dir
+  305  cd dev
+  306  dir
+  307  cd mathclub
+  308  cd home
+  309  home
+  310  dir
+  311  cd private
+  312  cd private_html/
+  313  dir
+  314  cd emc2
+  315  dir
+  316  cd pictures
+  317  dir
+  318  cd ..
+  319  cd pictures/
+  320  mkdir 2011
+  321  cd 2011
+  322  dir
+  323  cd private_html/
+  324  dir
+  325  cd emc2
+  326  dir
+  327  cd pictures
+  328  dir
+  329  cd 2011
+  330  dir
+  331  cp 1.jpg Guts_1.jpg
+  332  cp 2.jpg Guts_2.jpg
+  333  cp 3.jpg Guts_3.jpg
+  334  cp 4.jpg Guts_4.jpg
+  335  cp 5.jpg Guts_5.jpg
+  336  dir
+  337  dir
+  338  cp Guts_1.jpg Guts_01.jpg
+  339  dor
+  340  dir
+  341  cd ..
+  342  dir
+  343  cd 2011
+  344  dir
+  345  cp 1.jpg Guts_01.JPG
+  346  cd ..
+  347  cd ..
+  348  cd ..
+  349  cd ..
+  350  dir
+  351  cd public_html/
+  352  dir
+  353  cd emc2
+  354  dir
+  355  cd pictures
+  356  dir
+  357  mkdir 2011
+  358  cd 2011
+  359  dir
+  360  cd ...
+  361  cd ..
+  362  cd .
+  363  cd ..
+  364  dir
+  365  styles.php
+  366  dir styles.css
+  367  styles.css
+  368  vi styles.css
+  369  cd ..
+  370  cd ..
+  371  dir
+  372  cd test
+  373  dir
+  374  cd ..
+  375  cd ..
+  376  cd seoondtest
+  377  dir
+  378  cd mathclub
+  379  dir
+  380  cd secondtest
+  381  dir
+  382  cd ..
+  383  cd test
+  384  dir
+  385  cd  emc2_now
+  386  dir
+  387  dir
+  388  cd ..
+  389  rd emc2_now
+  390  rmdir emc2_now
+  391  dir
+  392  cd emc2
+  393  dir
+  394  cd ..
+  395  dir
+  396  cd ..
+  397  cd emc2
+  398  cd public_html/
+  399  dir
+  400  cd emc2
+  401  dir
+  402  cd ..
+  403  cd ..
+  404  cd private_html
+  405  dir
+  406  cd emc2
+  407  dir
+  408  cd pictures
+  409  dir'
+  410  dir
+  411  cd ..
+  412  cd 2011
+  413  cd pictures
+  414  cd 2011
+  415  dir
+  416  del *.*
+  417  rm *.*
+  418  dir
+  419  cd ..
+  420  rmdir 2011
+  421  cd ..
+  422  dir
+  423  del manage-dev.php
+  424  dir
+  425  cd ..
+  426  cd emc2
+  427  dir
+  428  exit
+  429  cd public_html/
+  430  cd emc2/
+  431  dir
+  432  cp results.php results-2010.php
+  433  cp problems.php problems-2010.php
+  434  cp photos.php photos-2010.php
+  435  cd public_html/
+  436  cd emc2
+  437  cp frame_bottom-dev.php frame_bottom-dev.php
+  438  cp frame_bottom-dev.php frame_bottom.php
+  439  cp index-dev.php index.php
+  440  exot
+  441  exit
+  442  cd public_html/
+  443  cd emc2/
+  444  dir
+  445  cp index-dev.php index.php
+  446  rm index-dev.php
+  447  cd public_html/
+  448  cd emc2
+  449  dir
+  450  cp manage-dev.php manage.php
+  451  cd public_html/
+  452  cd emc2
+  453  dir
+  454  cp solutions.php solutions-2010.php
+  455  cd public_html/
+  456  dir
+  457  cd emc2
+  458  cp team-scores-2011-dev.php team-scores-2011.php
+  459  cd public_html/
+  460  cd emc2/
+  461  dir
+  462  cp frame_botton-dev.php frame-dev.php
+  463  cp frame_bottom-dev.php frame_bottom.php
+  464  cp frame_bottom-dev.php frame_bottom.php
+  465  cp index-dev.php index.php
+  466  cp frame_bottom-dev.php frame_bottom.php
+  467  cp frame_bottom-dev.php frame_bottom.php
+  468  cp frame_bottom-dev.php frame_bottom.php
+  469  cp index-dev.php index.php
+  470  dir
+  471  cd public_html/
+  472  cd emc2/
+  473  cp team-scores-2011-dev.php team-scores-2011.php
+  474  cd public_html/
+  475  cd emc2/
+  476  dir
+  477  cp team-scores-2011-dev.php team-scores-2011.php
+  478  ls
+  479  cd  public_html/
+  480  ls
+  481  cd emc2/
+  482  ls
+  483  vim registration.php
+  484  ls
+  485  cd public_html/
+  486  ls
+  487  vim emc2/
+  488  cd emc2
+  489  ls
+  490  vim styles
+  491  vim styles.css
+  492  vim frame_top.php 
+  493  exit
+  494  dir
+  495  cd public_html/
+  496  cd emc2/
+  497  dir
+  498  cp index-dev.php index.php
+  499  cp index-dev.php index.php
+  500  exit
+  501  who
+  502  history
+  503  dir
+  504  cd public_html/
+  505  dir
+  506  cd emc2/
+  507  dir
+  508    281  vim scores-guts.php
+  509    282  vim styles
+  510    283  vim styles.css
+  511    284  ls
+  512    285  vim guts-board.php
+  513    286  dir
+  514    287  public_html/
+  515    288  dir
+  516    289  cd public_html/
+  517    290  dir
+  518    291  cd emc2
+  519    292  dir
+  520    293  cd resources
+  521    294  dir
+  522    295  cd //
+  523    296  cd pictures
+  524    297  dir
+  525    298  cd ..
+  526    299  dir /s pictures
+  527    300  dir
+  528    301  cd ..
+  529    302  dir
+  530    303  dir /s*.jpg
+  531    304  dir
+  532    305  cd dev
+  533    306  dir
+  534    307  cd mathclub
+  535    308  cd home
+  536    309  home
+  537    310  dir
+  538    311  cd private
+  539    312  cd private_html/
+  540    313  dir
+  541    314  cd emc2
+  542    315  dir
+  543    316  cd pictures
+  544    317  dir
+  545    318  cd ..
+  546    319  cd pictures/
+  547    320  mkdir 2011
+  548    321  cd 2011
+  549    322  dir
+  550    323  cd private_html/
+  551    324  dir
+  552    325  cd emc2
+  553    326  dir
+  554    327  cd pictures
+  555    328  dir
+  556    329  cd 2011
+  557    330  dir
+  558    331  cp 1.jpg Guts_1.jpg
+  559    332  cp 2.jpg Guts_2.jpg
+  560    333  cp 3.jpg Guts_3.jpg
+  561    334  cp 4.jpg Guts_4.jpg
+  562    335  cp 5.jpg Guts_5.jpg
+  563    336  dir
+  564    337  dir
+  565    338  cp Guts_1.jpg Guts_01.jpg
+  566    339  dor
+  567    340  dir
+  568    341  cd ..
+  569    342  dir
+  570    343  cd 2011
+  571    344  dir
+  572    345  cp 1.jpg Guts_01.JPG
+  573    346  cd ..
+  574    347  cd ..
+  575    348  cd ..
+  576    349  cd ..
+  577    350  dir
+  578    351  cd public_html/
+  579    352  dir
+  580    353  cd emc2
+  581    354  dir
+  582    355  cd pictures
+  583    356  dir
+  584    357  mkdir 2011
+  585    358  cd 2011
+  586    359  dir
+  587    360  cd ...
+  588    361  cd ..
+  589    362  cd .
+  590    363  cd ..
+  591    364  dir
+  592    365  styles.php
+  593    366  dir styles.css
+  594    367  styles.css
+  595    368  vi styles.css
+  596    369  cd ..
+  597    370  cd ..
+  598    371  dir
+  599    372  cd test
+  600    373  dir
+  601    374  cd ..
+  602    375  cd ..
+  603    376  cd seoondtest
+  604    377  dir
+  605    378  cd mathclub
+  606    379  dir
+  607    380  cd secondtest
+  608    381  dir
+  609    382  cd ..
+  610    383  cd test
+  611    384  dir
+  612    385  cd  emc2_now
+  613    386  dir
+  614    387  dir
+  615    388  cd ..
+  616    389  rd emc2_now
+  617    390  rmdir emc2_now
+  618    391  dir
+  619    392  cd emc2
+  620    393  dir
+  621    394  cd ..
+  622    395  dir
+  623    396  cd ..
+  624    397  cd emc2
+  625    398  cd public_html/
+  626    399  dir
+  627    400  cd emc2
+  628    401  dir
+  629    402  cd ..
+  630    403  cd ..
+  631    404  cd private_html
+  632    405  dir
+  633    406  cd emc2
+  634    407  dir
+  635    408  cd pictures
+  636    409  dir'
+  410  dir
+  411  cd ..
+  412  cd 2011
+  413  cd pictures
+  414  cd 2011
+  415  dir
+  416  del *.*
+  417  rm *.*
+  418  dir
+  419  cd ..
+  420  rmdir 2011
+  421  cd ..
+  422  dir
+  423  del manage-dev.php
+  424  dir
+  425  cd ..
+  426  cd emc2
+  427  dir
+  428  exit
+  429  cd public_html/
+  430  cd emc2/
+  431  dir
+  432  cp results.php results-2010.php
+  433  cp problems.php problems-2010.php
+  434  cp photos.php photos-2010.php
+  435  cd public_html/
+  436  cd emc2
+  437  cp frame_bottom-dev.php frame_bottom-dev.php
+  438  cp frame_bottom-dev.php frame_bottom.php
+  439  cp index-dev.php index.php
+  440  exot
+  441  exit
+  442  cd public_html/
+  443  cd emc2/
+  444  dir
+  445  cp index-dev.php index.php
+  446  rm index-dev.php
+  447  cd public_html/
+  448  cd emc2
+  449  dir
+  450  cp manage-dev.php manage.php
+  451  cd public_html/
+  452  cd emc2
+  453  dir
+  454  cp solutions.php solutions-2010.php
+  455  cd public_html/
+  456  dir
+  457  cd emc2
+  458  cp team-scores-2011-dev.php team-scores-2011.php
+  459  cd public_html/
+  460  cd emc2/
+  461  dir
+  462  cp frame_botton-dev.php frame-dev.php
+  463  cp frame_bottom-dev.php frame_bottom.php
+  464  cp frame_bottom-dev.php frame_bottom.php
+  465  cp index-dev.php index.php
+  466  cp frame_bottom-dev.php frame_bottom.php
+  467  cp frame_bottom-dev.php frame_bottom.php
+  468  cp frame_bottom-dev.php frame_bottom.php
+  469  cp index-dev.php index.php
+  470  dir
+  471  cd public_html/
+  472  cd emc2/
+  473  cp team-scores-2011-dev.php team-scores-2011.php
+  474  cd public_html/
+  475  cd emc2/
+  476  dir
+  477  cp team-scores-2011-dev.php team-scores-2011.php
+  478  ls
+  479  cd  public_html/
+  480  ls
+  481  cd emc2/
+  482  ls
+  483  vim registration.php
+  484  ls
+  485  cd public_html/
+  486  ls
+  487  vim emc2/
+  488  cd emc2
+  489  ls
+  490  vim styles
+  491  vim styles.css
+  492  vim frame_top.php
+  493  exit
+  494  dir
+  495  cd public_html/
+  496  cd emc2/
+  497  dir
+  498  cp index-dev.php index.php
+  499  cp index-dev.php index.php
+  500  exit
+  501  who
+  502  history
+  637  history > history.txt

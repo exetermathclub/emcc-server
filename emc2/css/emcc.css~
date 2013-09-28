@@ -1,0 +1,147 @@
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 16;
+}
+
+a {
+    text-decoration: none;
+}
+
+.h1 {
+    font-size: 30px;
+}
+
+.selflink {
+    color: black;
+}
+
+#name {
+    padding-left: 5px;
+    border-left: 10px solid #990000;
+}
+
+#top_divider {
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 88px;
+    color: #990000;
+    background-color: #990000;
+}
+
+#bottom_divider {
+    margin-left: 150px;
+    margin-right: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #990000;
+    background-color: #990000;
+}
+
+#abbr {
+    width: 150px;
+    color: #990000;
+    font-size: 20px;
+    padding-left: 5px;
+    border-left: 10px solid #990000;
+    border-bottom: 2px solid #CC9999;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#emcc_logo {
+    overflow: auto;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 84px;
+    width: 88px;
+}
+
+#navbar {
+    float: left;
+    padding-top: 5px;
+    padding-left: 15px;
+    width: 150px;
+}
+
+.navbar_section_header {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.navbar_section {
+    padding-left: 15px;
+}
+
+#navbar a {
+    display: block;
+    color: black;
+}
+
+#information {
+    border-top: 1px solid #990000;
+    border-bottom: 1px solid #CC9999;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+#register {
+    border-bottom: 1px solid #990000;
+    padding-bottom: 10px;
+}
+
+#online {
+    border-bottom: 1px solid #CC9999;
+    padding-bottom: 10px;
+}
+
+#coaches {
+    border-bottom: 1px solid #990000;
+    padding-bottom: 10px;
+}
+
+#archive_link {
+    cursor: pointer;
+}
+
+#archive_section {
+    display: none;
+}
+
+.post_title {
+    font-size: 30px;
+    border-bottom: 2px solid #990000;
+}
+
+#content {
+    text-indent: 5px;
+    margin-left: 150px;
+    padding-left: 30px;
+    padding-right: 88px;
+}
+
+.post {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#footer {
+    width: 100%;
+    clear: right;
+    float: right;
+    text-align: right;
+}
+
+#sponsor {
+    margin-top: 50px;
+    border-right: 10px solid #990000;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+address {
+    border-right: 10px solid #990000;
+    padding-right: 10px;
+}

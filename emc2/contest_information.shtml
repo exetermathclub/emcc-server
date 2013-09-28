@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Contest Information</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/emcc.css">
+        <link rel="stylesheet" type="text/css" href="css/contest_information.css">
+
+        <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+        <!-- Google Analytics -->
+        <script type="text/javascript">
+             (function(i, s, o, g, r, a, m) {
+                 i['GoogleAnalyticsObject'] = r;
+                 i[r] = i[r] ||
+                 function() {
+                     (i[r].q = i[r].q || []).push(arguments)
+                 }, i[r].l = 1 * new Date();
+                 a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                 a.async = 1;
+                 a.src = g;
+                 m.parentNode.insertBefore(a, m)
+             })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+             ga('create', 'UA-38541594-3', 'exeter.edu');
+             ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+<!--#include virtual="bars.html" -->
+        <div id="content">
+            <a name="Schedule"></a>
+            <div class="post_title">Schedule</div>
+            <div class="post">
+                <table id="schedule">
+                    <tr>
+                        <th>Time</th><th>Event</th><th>Location</th>
+                    </tr>
+                    <tr>
+                        <td>9:00AM - 10:00</td><td>Registration and Refreshments</td><td>Academy Building Foyer</td>
+                    </tr>
+                    <tr>
+                        <td>10:00 - 10:30</td><td>Opening Ceremony and Instructions</td><td>Assembly Hall</td>
+                    </tr>
+                    <tr>
+                        <td>10:30 - 12:30</td><td>Individual and Team Rounds</td><td>Academy Building Classrooms</td>
+                    </tr>
+                    <tr>
+                        <td>12:30 - 1:15PM</td><td>Lunch</td><td>Academy Building Classrooms</td>
+                    </tr>
+                    <tr>
+                        <td>1:30 - 3:00</td><td>Guts Round</td><td>Assembly Hall</td>
+                    </tr>
+                    <tr>
+                        <td>3:00 - 3:30</td><td>Puzzle Round</td><td>Assembly Hall</td>
+                    </tr>
+                    <tr>
+                        <td>3:30 - 4:00</td><td>Awards Ceremony</td><td>Assembly Hall</td>
+                    </tr>
+                </table>
+            </div>
+            <a name="Format"></a>
+            <div class="post_title">Format</div>
+            <div class="post">
+                <p>
+                    We are looking to improve the format this year, but these events will probably still form the core of the competition.
+                </p>
+                <div class="section_header">Individual Rounds</div>
+                <p>
+                    The individual round consists of two parts, taken one after another. The first part has 20 questions in 20 minutes, emphasizing speed. The second part is 10 questions over 30 minutes, emphasizing accuracy in problem solving. Questions in the first part are worth 3 points each, which increases to 9 points each in in the second round. Each student can thus earn up to 150 points, which determines their individual ranking, and is added to the student‘s team score (so a team can earn up to 600 points from the individual round).
+                </p>
+                <div class="section_header">Team Round</div>
+                <p>
+                    The team round is a 45 minute round where everybody on the team can work together to solve 10 questions. The questions will mostly be unrelated to each other, but some of them may be strung together by a common theme. Each question is worth 30 points, so a maximum of 300 points can be earned for the team score in this round.
+                </p>
+                <div class="section_header">Guts Round</div>
+                <p>
+                    The Guts Round is a live round consisting of 24 questions in 75 minutes. The questions are given to the teams in sets of three. At the beginning of the round, each team will send a runner down to one of the scoring tables (spaced evenly throughout the contest hall to minimize differences in distance) to get the first set of three problems, and bring it back to their team. The team then works together for as long as they need (within the 75 minutes) to solve these three problems. When they‘re ready, the runner then drops off their answers at a scoring table, where they will receive the next set of three. At each scoring table, the problems will be scored as soon as they are dropped off, and a running tally of each team‘s points and progress will displayed on a projector screen at the front of the hall. The point value for each problem increases between each set of three, starting at 6 points per problem in the first set, and ending at 18 points per problem in the last (8th) set, for a total of 300 possible points. The point value for the eight problem sets are as follows (6, 8, 10, 12, 14, 16, 16, 18).
+                </p>
+            </div>
+            <a name="Rules"></a>
+            <div class="post_title">Rules</div>
+            <div class="post">
+                <div class="section_header">Prohibited items</div>
+                <p>
+                    Books, notes, calculators, pocket organizers, slide-rules, abaci, calculator wrist watches, or any other kind of computational aid are prohibited during all parts of the competition. The same goes for graph paper, rulers, protractors, compasses, or any other drawing aid. Similarly, laptops, PDAs, cell phones, or any other electronic communication devices are also not allowed.
+                </p>
+                <div class="section_header">Forms of answers</div>
+                    <ul>
+                        <li>Answers need to be simplified and exact unless otherwise specified. (So 3.14 will not work for pi, nor will 4/12 instead of 1/3.)</li>
+                        <li>No partial credit will be given unless specified otherwise.</li>
+                        <li>Fractions should be simplified and improper. (13/4, not 26/8 or 3 1/4)</li>
+                        <li>Radicals should be simplified so that the radicand does not contain any fractions nor be divisible by the square of any integer greater than one. Denominators should be rationalized.</li>
+                        <li>Correct mathematical notation should be used.</li>
+                    </ul>
+                    <b>All decisions made by the EMC<sup>2</sup> judges are final.</b>
+                </div>
+            </div>
+        </div>
+<!--#include virtual="footer.html" -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript">
+            $("#archive_link").click(function () {
+                "use strict";
+                var secobj = $("#archive_section");
+                if (secobj.css("display") !== "block") {
+                    secobj.show();
+                } else {
+                    secobj.hide();
+                }
+            });
+        </script>
+    </body>
+</html>

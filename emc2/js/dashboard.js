@@ -41,6 +41,8 @@ $(function () {
                         team_member_inputs.each(function (k) {
                             if (team.members[k]) {
                                 this.value = team.members[k];
+                            } else {
+                                this.value = "";
                             }
                         });
                         if (team.paid) {
@@ -85,9 +87,7 @@ $(function () {
         var team_members = [];
         team_member_inputs.each(function () {
             var team_member = this.value;
-            if (team_member !== "") {
-                team_members.push(team_member);
-            }
+            team_members.push(team_member);
         });
         return team_members;
     }

@@ -78,19 +78,6 @@ html {
 }
 
 /**
- * Address `font-family` inconsistency between `textarea` and other form
- * elements.
- */
-
-html,
-button,
-input,
-select,
-textarea {
-    font-family: sans-serif;
-}
-
-/**
  * Address margins handled incorrectly in IE 6/7.
  */
 

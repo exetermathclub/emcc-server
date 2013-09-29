@@ -53,6 +53,9 @@
                 </div>
                 <button class="field" id="button">Login</button>
             </div>
+            <div class="post">
+                *If you made an account in previous years, you will need to register again.
+            </div>
         </div>
 <!--#include virtual="footer.html" -->
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

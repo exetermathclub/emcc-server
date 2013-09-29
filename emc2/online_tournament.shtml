@@ -43,7 +43,9 @@
             <div class="post_title">
                 Online Tournament
             </div>
-            EMCC online tournament registration will be available here soon.
+            <div class="post">
+                EMCC online tournament will be available here soon. Please register using the normal interface with your account.
+            </div>
         </div>
 <!--#include virtual="footer.html" -->
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

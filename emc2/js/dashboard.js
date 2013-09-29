@@ -72,7 +72,7 @@ $(function () {
         team_member_inputs.val("");
         team_delete.hide();
         team_new.hide();
-        team_edit_pane.show(400);
+        team_edit_pane.show();
         current_viewed_team = -1;
     });
 
@@ -105,10 +105,10 @@ $(function () {
                     "participation": (team_participation.val() === "On-Site").toString()
                 },
                 success: function () {
-                    team_edit_pane.hide(0);
+                    team_edit_pane.hide();
                     reloadTeams();
-                    team_new.show(0);
-                    $("#delete").show(0);
+                    team_new.show();
+                    $("#delete").show();
                 }
             });
         } else {
@@ -123,9 +123,9 @@ $(function () {
                     "participation": team_participation.val() === "On-Site"
                 },
                 success: function () {
-                    team_edit_pane.hide(0);
+                    team_edit_pane.hide();
                     reloadTeams();
-                    team_new.show(0);
+                    team_new.show();
                 }
             });
         }

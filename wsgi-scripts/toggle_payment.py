@@ -32,16 +32,19 @@ def application(environ, start_response):
     
     rowid = int(auth.decrypt(key, form['teamid'].value))
 
-    c.execute("UPDATE teams SET paid=? WHERE id=?", (int(form['paid'].value), rowid))
+    success = True
+    try:
+        c.execute("UPDATE teams SET paid=? WHERE id=?", (int(form['paid'].value), rowid))
+    except sqlite3.OperationalError:
+        success = False
     
+    output = json.dumps({
+        "success": success
+    })
+
     # Close the database connection
     conn.commit()
     conn.close()
-
-    output = json.dumps({
-        "id": c.lastrowid,
-        "rowid": rowid
-    })
 
     # Actually write everything.
     status = '200 OK'

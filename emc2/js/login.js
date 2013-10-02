@@ -19,7 +19,7 @@ $(function () {
             if (fields[i].val().length === 0) {
                 tips[i].text("This field is required.");
                 ret = false;
-            } else if (!(/^[a-zA-Z0-9-_\.]*$/.test(fields[i].val()))) {
+            } else if (!(/^[a-zA-Z0-9-_@\.]*$/.test(fields[i].val()))) {
                 tips[i].text("Invalid username.");
                 ret = false;
             } else {

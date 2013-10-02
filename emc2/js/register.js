@@ -1,7 +1,8 @@
 $(function () {
     "use strict";
-    var fields = [$("#username"), $("#realname"), $("#password"), $("#confirm"), $("#team"), $("#address")],
+    var fields = [$("#username"),$("#email"), $("#realname"), $("#password"), $("#confirm"), $("#team"), $("#address")],
         tips = [$("#username_tip"),
+                $("#email_tip"),
                 $("#realname_tip"),
                 $("#password_tip"),
                 $("#confirm_tip"),
@@ -9,6 +10,7 @@ $(function () {
                 $("#address_tip")],
         it,
         username_el = $("#username"),
+        email_el    = $("#email"),
         realname_el = $("#realname"),
         password_el = $("#password"),
         team_el     = $("#team"),
@@ -16,26 +18,17 @@ $(function () {
         button_el   = $("#button");
 
     function verify(obj) {
-        var last, i, ret = true;
-        for (i = 0; i < 6; i += 1) {
-            if (fields[i][0] === obj) {
-                last = i;
-                break;
-            }
-        }
-        for (i = 0; i <= last; i += 1) {
-            if (i === 3) {
-                if (fields[3].val() !== fields[2].val()) {
-                    tips[3].text("Passwords do not match.");
+        var i, ret = true;
+        for (i = 0; i < 7; i += 1) {
+            if (i === 4) {
+                if (fields[4].val() !== fields[3].val()) {
+                    tips[4].text("Passwords do not match.");
                     ret = false;
                 } else {
-                    tips[3].text("");
+                    tips[4].text("");
                 }
-            } else if (i !== 4 && fields[i].val().length === 0) {
+            } else if (fields[i].val().length === 0 && i != 5) {
                 tips[i].text("This field is required.");
-                ret = false;
-            } else if (i == 0 && !(/^[a-zA-Z0-9-_\.]*$/.test(fields[i].val()))) {
-                tips[i].text("Can't contain special characters.");
                 ret = false;
             } else {
                 tips[i].text("");
@@ -44,21 +37,14 @@ $(function () {
         return ret;
     }
 
-    function wrapper(event) {
-        verify(event.target);
-    }
-
-    for (it = 0; it < 5; it += 1) {
-        fields[it].keyup(wrapper);
-    }
-
     // Register a user with the given data, then redirect to login
-    function register(username, realname, password, orgname, address) {
+    function register(username, email, realname, password, orgname, address) {
         $.ajax({
             url: "../wsgi-scripts/register.py",
             method: "POST",
             data: {
                 "username": username,
+                "email": email,
                 "realname": realname,
                 "password": CryptoJS.SHA512(password).toString(CryptoJS.enc.Hex),
                 "orgname": orgname,
@@ -77,12 +63,12 @@ $(function () {
     }
 
     button_el.click(function () {
-        if (verify(document.getElementById("address"))) {
+        if (verify()) {
             var body_el = $("body"),
                 initial = body_el.css("cursor");
             body_el.css("cursor", "wait");
             button_el.attr("disabled", "disabled");
-            register(username_el.val(), realname_el.val(), password_el.val(), team_el.val(), address_el.val());
+            register(username_el.val(), email_el.val(), realname_el.val(), password_el.val(), team_el.val(), address_el.val());
             button_el.removeAttr("disabled");
             body_el.css("cursor", initial);
         }

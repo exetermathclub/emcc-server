@@ -13,7 +13,7 @@ $(function() {
     srp_key = CryptoJS.enc.Base64.parse(srp_string);
     
     function team_format(row) {
-        return $("<tr>")
+        var table_row = $("<tr>")
             .append($("<td class='team_id'>").text(row[0]))
             .append($("<td class='team_coach'>").text(row[1]))
             .append($("<td class='team_name'>").text(row[2]))
@@ -23,11 +23,16 @@ $(function() {
                 .addClass("payment_checkbox")
                 .click(function() {
                     $.ajax({
-                        "url": "../wsgi-scripts/toggle_payment.py",
-                        "data": {
+                        url: "../wsgi-scripts/toggle_payment.py",
+                        data: {
                             "teamid": JSON.stringify(encrypt(srp_key, row[0].toString())),
                             "id": srp_id,
                             "paid": this.checked ? 1 : 0
+                        },
+                        success: function (data) {
+                            if(!data.success) {
+                                alert("Action failed");
+                            }
                         }
                     });
                 })
@@ -40,11 +45,15 @@ $(function() {
                             "data": {
                                 "teamid": JSON.stringify(encrypt(srp_key, row[0].toString())),
                                 "id": srp_id,
+                            },
+                            success: function() {
+                                table_row.remove();
                             }
                         });
                     }
                 })
             ));
+        return table_row;
     }
 
     //Request all the teams
@@ -58,7 +67,6 @@ $(function() {
         "success": function (data) {
             var decoded = JSON.parse(decrypt(srp_key, data)),
                 team_list_el = $("#team_table");
-            console.log(decoded);
             for (var i = 0; i < decoded.length; i += 1) {
                 team_list_el.append(team_format(decoded[i]));
             }

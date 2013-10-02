@@ -30,18 +30,18 @@ def application(environ, start_response):
     conn = sqlite3.connect('/home/mathclub/public_html/wsgi-scripts/teams.db')
     c = conn.cursor()
     
-    rowid = int(auth.decrypt(key, form['teamid'].value))
+    output = auth.decrypt(key, form['teamid'].value)
 
+    """
+    rowid = int(auth.decrypt(key, form['teamid'].value))
+    
     c.execute("DELETE FROM teams WHERE id=?", (rowid,))
     
     # Close the database connection
     conn.commit()
     conn.close()
-
-    output = json.dumps({
-        "id": c.lastrowid,
-        "rowid": rowid
-    })
+   
+    output = """
 
     # Actually write everything.
     status = '200 OK'

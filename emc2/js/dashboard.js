@@ -149,4 +149,34 @@ $(function () {
             }
         });
     });
+
+    $.ajax({
+        url: "../wsgi-scripts/checkemail.py",
+        method: "POST",
+        success: function (data) {
+            if(data == "False") {
+                $(".dialog").show();
+                $(".cover").show();
+                $("#dialog_submit").click(function() {
+                    if ($("dialog_input").val().indexOf("@") > -1) {
+                        $.ajax({
+                            url: "../wsgi-scripts/modify.py",
+                            method: "POST",
+                            data: {
+                                "columns": JSON.stringify([2]),
+                                "values": JSON.stringify([$("#dialog_input").val()])
+                            },
+                            success: function() {
+                                $(".dialog").hide();
+                                $(".cover").hide();
+                            }
+                        });
+                   }
+                   else {
+                        $("#dialog_tip").text("Please enter a valid email.");
+                   }
+               });
+            }
+        }
+    });
 });

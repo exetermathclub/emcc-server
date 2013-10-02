@@ -46,7 +46,10 @@
             </div>
             <div class="post">
                 <div class="field_wrapper">
-                  <span class="field_label">Username:</span> <input class="field" id="username" autocorrect="off" autocapitalize="off" spellcheck="false"> <span id="username_tip"></span>
+                    <span class="field_label">Username:</span> <input class="field" id="username" autocorrect="off" autocapitalize="off" spellcheck="false"> <span id="username_tip"></span>
+                </div>
+                <div class="field_wrapper">
+                    <span class="field_label">Email:</span> <input class="field" id="email" autocorrect="off" autocapitalize="off" spellcheck="false"> <span id="email_tip"></span>
                 </div>
                 <div class="field_wrapper">
                     <span class="field_label">Your Real Name:</span> <input class="field" id="realname" autocorrect="off" autocapitalize="off" spellcheck="false"> <span id="realname_tip"></span>

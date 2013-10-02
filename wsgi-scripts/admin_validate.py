@@ -9,9 +9,6 @@ auth = imp.load_source("auth", "/home/mathclub/public_html/wsgi-scripts/auth.py"
 from http import cookies
 
 def application(environ, start_response):
-    # Debugging
-    debug = open("/home/mathclub/public_html/wsgi-scripts/debug.txt", "w", encoding='utf-8')
-
     # Open the srp databse connection
     conn = auth.initDB("/home/mathclub/public_html/wsgi-scripts/auth_srp.db")
     c = conn.cursor()
@@ -33,12 +30,10 @@ def application(environ, start_response):
             "message": auth.encrypt(key, "SRP_SERVER_SUCCESS_MESSAGE")
         })
     else:
-        debug.write("Decrypted:\n%s\nTo:\n%s\n\n" % (form['message'].value,  auth.decrypt(key, form['message'].value)))
         output = json.dumps({
             "error": 13
         })
 
-    debug.close()
     # Close the database connection
     conn.close()
 

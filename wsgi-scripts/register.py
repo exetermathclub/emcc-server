@@ -16,6 +16,7 @@ def application(environ, start_response):
         keep_blank_values=True
     )
     username = form['username'].value
+    email    = form['email'].value
     realname = form['realname'].value
     password = form['password'].value
     orgname  = form['orgname'].value
@@ -38,8 +39,8 @@ def application(environ, start_response):
         hashfun.update(password.encode())
         hashval = hashfun.hexdigest()
         cursor.execute("""
-        INSERT INTO users (username, realname, salt, hash, orgname, address) VALUES (?, ?, ?, ?, ?, ?)
-        """, (username, realname, salt, hashval, orgname, address))
+        INSERT INTO users (username, email, realname, salt, hash, orgname, address) VALUES (?, ?, ?, ?, ?, ?, ?)
+        """, (username, email, realname, salt, hashval, orgname, address))
         cursor.close()
         conn.commit()
         output = "true"

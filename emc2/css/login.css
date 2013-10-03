@@ -9,7 +9,6 @@
 
 input.field {
     font-family: "Times", serif;
-    height: 20px;
     width: 200px;
     padding: 2px;
     border: 1px solid black;
@@ -31,6 +30,8 @@ button {
 }
 
 #address {
+    font-family: "Times", serif;
+    border: 1px solid black;
     width: 200px;
 }
 

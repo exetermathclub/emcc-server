@@ -28,7 +28,7 @@ a {
 }
 
 #bottom_divider {
-    margin-left: 150px;
+    margin-left: 190px;
     margin-right: 10px;
     margin-top: 0;
     margin-bottom: 0;
@@ -36,7 +36,7 @@ a {
 }
 
 #abbr {
-    width: 150px;
+    width: 190px;
     color: #990000;
     font-size: 20px;
     padding-left: 5px;
@@ -57,7 +57,7 @@ a {
 #navbar {
     float: left;
     padding-left: 15px;
-    width: 150px;
+    width: 190px;
 }
 
 .navbar_section_header {
@@ -115,7 +115,7 @@ a {
 }
 
 #content {
-    margin-left: 150px;
+    margin-left: 190px;
     padding-left: 30px;
     padding-right: 30px;
 }

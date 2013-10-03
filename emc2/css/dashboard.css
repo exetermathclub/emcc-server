@@ -60,8 +60,6 @@ button.field {
     font-size: 17px;
     padding-left: 15px;
     padding-right: 15px;
-    padding-bottom: 2px;
-    padding-top: 4px;
     background-color: #ccc;
     background-image: -webkit-linear-gradient(#eee, #ccc);
     background-image: linear-gradient(to top, #ccc, #eee);

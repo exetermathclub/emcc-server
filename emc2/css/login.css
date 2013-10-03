@@ -19,8 +19,6 @@ button.field {
     font-size: 17px;
     padding-left: 15px;
     padding-right: 15px;
-    padding-bottom: 3px;
-    padding-top: 3px;
     background-color: #ccc;
     background-image: -webkit-linear-gradient(#eee, #ccc);
     background-image: linear-gradient(to top, #ccc, #eee);

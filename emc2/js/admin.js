@@ -4,7 +4,6 @@ $(function() {
         srp_id = localStorage.getItem("SRP_ID"),
         srp_key;
     
-    console.log(srp_string, srp_id);
 
     //If we haven't logged in correctly, tell the user to do so
     if (srp_string == null || srp_id == null) location.href = "login.shtml";

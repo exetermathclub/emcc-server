@@ -22,7 +22,7 @@ a.field {
     cursor: pointer;
     color: #00B;
     font-size: 20px;
-    margin-right: 10%;
+    margin-right: 5%;
 }
 
 .team:hover {
@@ -58,6 +58,8 @@ button.field {
     font-size: 17px;
     padding-left: 15px;
     padding-right: 15px;
+    padding-bottom: 2px;
+    padding-top: 4px;
     background-color: #ccc;
     background-image: -webkit-linear-gradient(#eee, #ccc);
     background-image: linear-gradient(to top, #ccc, #eee);
@@ -70,7 +72,7 @@ button.field:hover {
 }
 
 button {
-    font-family: "Times New Roman", serif;
+    font-family: "Times", serif;
 }
 .dialog {
     z-index: 5;

@@ -1,6 +1,6 @@
 $(function () {
     "use strict";
-    var fields = [$("#username"),$("#email"), $("#realname"), $("#password"), $("#confirm"), $("#team"), $("#address")],
+    var fields = [$("#username"), $("#email"), $("#realname"), $("#password"), $("#confirm"), $("#team"), $("#address")],
         tips = [$("#username_tip"),
                 $("#email_tip"),
                 $("#realname_tip"),
@@ -8,7 +8,6 @@ $(function () {
                 $("#confirm_tip"),
                 $("#team_tip"),
                 $("#address_tip")],
-        it,
         username_el = $("#username"),
         email_el    = $("#email"),
         realname_el = $("#realname"),
@@ -17,7 +16,7 @@ $(function () {
         address_el  = $("#address"),
         button_el   = $("#button");
 
-    function verify(obj) {
+    function verify() {
         var i, ret = true;
         for (i = 0; i < 7; i += 1) {
             if (i === 4) {
@@ -27,7 +26,7 @@ $(function () {
                 } else {
                     tips[4].text("");
                 }
-            } else if (fields[i].val().length === 0 && i != 5) {
+            } else if (fields[i].val().length === 0 && i !== 5) {
                 tips[i].text("This field is required.");
                 ret = false;
             } else {
@@ -75,7 +74,7 @@ $(function () {
     });
 
     password_el.keypress(function (e) {
-        if (e && e.keyCode == 13) {
+        if (e && e.keyCode === 13) {
             button_el.click();
         }
     });

@@ -27,7 +27,7 @@ $(function () {
                 teams = data.teams;
                 function nameClick() {
                     var team = teams[i];
-                    return function (event) {
+                    return function () {
                         // Toggle the edit pane
                         if (team_edit_pane.css("display") === "none") {
                             team_edit_pane.hide();
@@ -61,7 +61,7 @@ $(function () {
                     team_list.append($("<div>").addClass("team").text(teams[i].name).click(nameClick()));
                 }
             },
-            error: function (data) {
+            error: function () {
                 window.location.href = "login.shtml";
             }
         });
@@ -154,11 +154,11 @@ $(function () {
         url: "../wsgi-scripts/checkemail.py",
         method: "POST",
         success: function (data) {
-            if(data == "False") {
+            if (data === "False") {
                 $(".dialog").show();
                 $(".cover").show();
-                $("#dialog_submit").click(function() {
-                    if ($("dialog_input").val().indexOf("@") > -1) {
+                $("#dialog_submit").click(function () {
+                    if ($("#dialog_input").val().indexOf("@") > -1) {
                         $.ajax({
                             url: "../wsgi-scripts/modify.py",
                             method: "POST",
@@ -166,16 +166,15 @@ $(function () {
                                 "columns": JSON.stringify([2]),
                                 "values": JSON.stringify([$("#dialog_input").val()])
                             },
-                            success: function() {
+                            success: function () {
                                 $(".dialog").hide();
                                 $(".cover").hide();
                             }
                         });
-                   }
-                   else {
+                    } else {
                         $("#dialog_tip").text("Please enter a valid email.");
-                   }
-               });
+                    }
+                });
             }
         }
     });

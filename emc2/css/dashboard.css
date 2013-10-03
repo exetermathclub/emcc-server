@@ -8,9 +8,11 @@
 }
 
 input.field {
-    height: 25px;
+    height: 20px;
     width: 200px;
     border: 1px solid black;
+    padding: 2px;
+    font-family: "Times", serif;
 }
 
 a.field {

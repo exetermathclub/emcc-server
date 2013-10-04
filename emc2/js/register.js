@@ -65,7 +65,7 @@ $(function () {
         if (verify()) {
             var body_el = $("body"),
                 initial = body_el.css("cursor");
-            body_el.css("cursor", "wait");
+            body_el.css("cursor", "wait !important");
             button_el.attr("disabled", "disabled");
             register(username_el.val(), email_el.val(), realname_el.val(), password_el.val(), team_el.val(), address_el.val());
             button_el.removeAttr("disabled");

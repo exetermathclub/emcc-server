@@ -89,12 +89,11 @@ $(function () {
     button_el.click(function () {
         if (verify()) {
             // Let the user know that we are logging in
-            var body_el = $("body"),
-                initial = body_el.css("cursor");
-            body_el.css("cursor", "wait !important");
+            var body_el = $("body");
+            body_el.addClass("waitcursor");
             button_el.attr("disabled", "disabled");
             login(username_el.val(), password_el.val());
-            body_el.css("cursor", initial);
+            body_el.removeClass("waitcursor");
             button_el.removeAttr("disabled");
         }
     });

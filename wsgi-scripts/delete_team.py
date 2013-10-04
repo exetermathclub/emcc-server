@@ -32,7 +32,6 @@ def application(environ, start_response):
     
     output = auth.decrypt(key, form['teamid'].value)
 
-    """
     rowid = int(auth.decrypt(key, form['teamid'].value))
     
     c.execute("DELETE FROM teams WHERE id=?", (rowid,))
@@ -41,8 +40,6 @@ def application(environ, start_response):
     conn.commit()
     conn.close()
    
-    output = """
-
     # Actually write everything.
     status = '200 OK'
     response_headers = [('Content-type', 'application/json'),

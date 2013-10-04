@@ -10,7 +10,7 @@
 input.field {
     font-family: "Times", serif;
     width: 200px;
-    padding: 2px;
+    padding: 5px;
     border: 1px solid black;
 }
 
@@ -33,5 +33,9 @@ button {
     font-family: "Times", serif;
     border: 1px solid black;
     width: 200px;
+}
+
+.waitcursor {
+    cursor: wait !important;
 }
 

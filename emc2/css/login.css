@@ -5,17 +5,21 @@
 .field_label {
     display: inline-block;
     width: 150px;
+    font-weight: bold;
 }
 
 input.field {
     font-family: "Times", serif;
     width: 200px;
-    padding: 5px;
+    height: 25px;
+    padding: 0px 5px 0px 5px;
     border: 1px solid black;
 }
 
 button.field {
     font-size: 17px;
+    margin-left: 5px;
+    margin-top: 5px;
     padding-left: 15px;
     padding-right: 15px;
     background-color: #ccc;
@@ -33,9 +37,5 @@ button {
     font-family: "Times", serif;
     border: 1px solid black;
     width: 200px;
-}
-
-.waitcursor {
-    cursor: wait !important;
 }
 

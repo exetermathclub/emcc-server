@@ -30,7 +30,6 @@ $(function () {
                     return function () {
                         // Toggle the edit pane
                         if (team_edit_pane.css("display") === "none") {
-                            team_edit_pane.hide();
                             team_edit_pane.show();
                             $("#new").hide();
                         }
@@ -72,6 +71,8 @@ $(function () {
     team_new.click(function () {
         team_name.val("");
         team_member_inputs.val("");
+        team_paid.text("Unpaid");
+        team_participation.val("On-Site");
         team_delete.hide();
         team_new.hide();
         team_edit_pane.show();

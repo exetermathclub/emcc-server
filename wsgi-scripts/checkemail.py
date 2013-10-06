@@ -39,11 +39,12 @@ def check(raw_cookie):
 
 def application(environ, start_response):
     # Initializing
-    output = ""
     conn = sqlite3.connect('/home/mathclub/public_html/wsgi-scripts/auth.db')
     cursor = conn.cursor()
     cursor.execute('PRAGMA temp_store=MEMORY')
-    result = False
+    success = False
+    error = None
+    output = ""
     if check(environ['HTTP_COOKIE']):
         uname = username(environ['HTTP_COOKIE'])
 
@@ -52,8 +53,15 @@ def application(environ, start_response):
         ret = cursor.fetchone()[0]
         if ret is not None:
             if len(ret) > 0:
-                result = True
-    output = str(result)
+                success = True
+        if success == False:
+            error = 1
+    else:
+        error = 0
+    output = json.dumps({
+        "success": success,
+        "error": error
+    })
     status = '200 OK'
     response_headers = [('Content-type', 'text/plain'),
                         ('Content-Length', str(len(output)))]

@@ -14,31 +14,48 @@ $(function () {
         team_delete         = $("#delete");
 
     function move_editpane(id) {
+        /*
+         * Move the edit pane to the team at position (id)
+         */
+        
+        //We save this for closure purposes
         var team = teams[id];
+
         if (id === current_viewed_team) {
-            if (team_edit_pane.css("display") !== "none") {
-                team_edit_pane.hide();
-            } else {
-                team_edit_pane.show();
-            }
-            return;
+            //If we're already here, toggle the edit pane instead
+            if (team_edit_pane.css("display") !== "none") team_edit_pane.hide();
+            else team_edit_pane.show();
         }
-        current_viewed_team = id;
-        team_new.show();
-        team_edit_pane.detach();
-        team_name.val(team.name);
-        team_member_inputs.each(function (index) {
-            this.value = team.members[index];
-        });
-        team_paid.text(team.paid ? "Paid" : "Unpaid");
-        team_participation.val(team.participation ? "On-Site" : "Online");
-        display_names[id].after(team_edit_pane);
-        team_edit_pane.show();
+        else {
+            //Otherwise, move the edit pane, first setting the global current_viewed_team state
+            current_viewed_team = id;
+            
+            //Remove the existing edit pane, and show the "new team" button if it is invisible
+            team_new.show();
+            team_edit_pane.detach();
+
+            //Update the edit pane fields
+            team_name.val(team.name);
+            team_member_inputs.each(function (index) {
+                this.value = team.members[index];
+            });
+            team_paid.text(team.paid ? "Paid" : "Unpaid");
+            team_participation.val(team.participation ? "On-Site" : "Online");
+
+            //Reappend the edit pane where we want it, then make it visible
+            display_names[id].after(team_edit_pane);
+            team_edit_pane.show();
+       }
     }
 
     function getID(obj) {
+        /*
+         * Get the ordinal id associated with DOM element obj
+         */
+
         var i;
         for (i = 0; i < display_names.length; i += 1) {
+            //Brute-force
             if (obj === display_names[i][0]) {
                 return i;
             }
@@ -49,7 +66,9 @@ $(function () {
         move_editpane(getID(event.target));
     }
 
-    // Get the teams belonging to this user
+    /*
+     * Get the teams belonging to this user
+     */
     $.ajax({
         url: "../wsgi-scripts/teams.py",
         method: "GET",
@@ -186,8 +205,9 @@ $(function () {
     $.ajax({
         url: "../wsgi-scripts/checkemail.py",
         method: "GET",
+        dataType: "json",
         success: function (data) {
-            if (data === "False") {
+            if (!data.success && data.error == 1) {
                 $(".dialog").show();
                 $(".cover").show();
                 $("#dialog_submit").click(function () {
@@ -208,6 +228,8 @@ $(function () {
                         $("#dialog_tip").text("Please enter a valid email.");
                     }
                 });
+            } else if (data.error === 0) {
+                window.location.href= "login.shtml";
             }
         }
     });

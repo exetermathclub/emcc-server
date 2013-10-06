@@ -13,7 +13,7 @@ def application(environ, start_response):
     conn = auth.initDB("/home/mathclub/public_html/wsgi-scripts/auth_srp.db")
     c = conn.cursor()
     output = ""
-
+    
     # Make sure that we have a working sesskeys table
     c.execute("CREATE TABLE IF NOT EXISTS sesskeys (id INTEGER PRIMARY KEY ASC, sesskey TEXT)")
     
@@ -23,14 +23,14 @@ def application(environ, start_response):
         environ = environ,
         keep_blank_values = True
     )
-
+    
     kdict = auth.generateKey(conn, "admin", int(form['A'].value, 16))
     
     # Remember this session key
     c.execute("INSERT INTO sesskeys (sesskey) VALUES (?)", (auth.hexify(kdict["K"]),))
     conn.commit()
     conn.close()
-
+    
     # Write what the client needs to know to generate the same key
     output = json.dumps({
         "s": kdict["s"],

@@ -31,7 +31,7 @@ def application(environ, start_response):
     conn = sqlite3.connect('/home/mathclub/public_html/wsgi-scripts/teams.db')
     c = conn.cursor()
     
-    c.execute("SELECT * FROM teams")
+    c.execute("SELECT * FROM teams ORDER BY username ASC")
 
     # Get all the teamm info
     team_info = c.fetchall()

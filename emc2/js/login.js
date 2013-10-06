@@ -77,8 +77,8 @@ $(function () {
                     } else {
                         username_el.val("");
                         password_el.val("");
-                        username_tip.text("Incorrect username or password.");
-                        password_tip.text("Incorrect username or password.");
+                        username_tip.text("Incorrect username or password");
+                        password_tip.text("Incorrect username or password");
                     }
                 }
             });

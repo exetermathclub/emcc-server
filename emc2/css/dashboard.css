@@ -5,15 +5,14 @@
 .field_label {
     display: inline-block;
     width: 150px;
-    font-weight: bold;
 }
 
 input.field {
-    font-family: "Times", serif;
+    font-family: georgia, times, serif;
     width: 200px;
     height: 25px;
     border: 1px solid black;
-    padding: 0px 5px 0px 5px;
+    padding: 0px 2px 0px 2px;
 }
 
 a.field {
@@ -21,11 +20,9 @@ a.field {
 }
 
 .team {
-    display: inline;
     cursor: pointer;
     color: #00B;
     font-size: 20px;
-    margin-right: 5%;
 }
 
 .team:hover {
@@ -37,16 +34,18 @@ a.field {
 }
 
 #delete {
-    color: #FFFFFF;
-    background-color: #dd1439;
-    background-image: -webkit-linear-gradient(#d20039, #dd1439);
-    background-image: linear-gradient(to top, #dd1439, #d20039);
+    color: #900;
+    background-color: #FFFFFF;
     border-radius: 2px;
     border: 1px solid #888;
 }
 
 #delete:hover {
     background:#F00;
+    color: #FFFFFF;
+    background-image: -moz-linear-gradient(#dc5f59, #b33630);
+    background-image: -webkit-linear-gradient(#dc5f59, #b33630);
+    background-image: linear-gradient(#dc5f59, #b33630);
 }
 
 #team_edit_pane {
@@ -58,9 +57,8 @@ a.field {
 }
 
 button.field {
-    font-size: 17px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
     background-color: #ccc;
     background-image: -webkit-linear-gradient(#eee, #ccc);
     background-image: linear-gradient(to top, #ccc, #eee);
@@ -73,7 +71,7 @@ button.field:hover {
 }
 
 button {
-    font-family: "Times", serif;
+    font-family: georgia, times, serif;
 }
 .dialog {
     z-index: 5;
@@ -99,4 +97,8 @@ button {
     opacity: 0.5;
     background-color: #888;
     display: none;
+}
+
+#new {
+    margin-top: 5px;
 }

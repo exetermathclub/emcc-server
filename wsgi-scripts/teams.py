@@ -84,7 +84,6 @@ def print_list(uname):
 
     # Close the teams database
     conn.close()
-    
     # Format the teams
     teams = []
     for row in rows:
@@ -95,7 +94,6 @@ def print_list(uname):
             "paid": row[4],
             "participation": row[5]
         })
-    
     # JSON serialize them and return
     return json.dumps({
         "teams": teams

@@ -52,7 +52,7 @@
                     <span class="field_label">Email:</span> <input class="field" id="email" autocorrect="off" autocapitalize="off" spellcheck="false"> <span id="email_tip"></span>
                 </div>
                 <div class="field_wrapper">
-                    <span class="field_label">Your Real Name:</span> <input class="field" id="realname" autocorrect="off" autocapitalize="off" spellcheck="false"> <span id="realname_tip"></span>
+                    <span class="field_label">Real Name:</span> <input class="field" id="realname" autocorrect="off" autocapitalize="off" spellcheck="false"> <span id="realname_tip"></span>
                 </div>
                 <div class="field_wrapper">
                   <span class="field_label">Password:</span> <input type="password" class="field" id="password"> <span id="password_tip"></span>
@@ -62,9 +62,6 @@
                 </div>
                 <div class="field_wrapper">
                     <span class="field_label">Organization Name:</span> <input class="field" id="team" autocorrect="off" spellcheck="false"> <span id="team_tip"></span>
-                </div>
-                <div class="field_wrapper">
-                  <span class="field_label">Mailing Address:</span> <textarea class="field" id="address"></textarea> <span id="address_tip"></span>
                 </div>
                 <button class="field" id="button">Register</button>
             </div>
@@ -87,8 +84,5 @@
         </script>
         <script type="text/javascript" src="js/register.js"></script>
         <script type="text/javascript" src="js/sha512.js"></script>
-        <script type="text/javascript">
-            $("textarea").autoResize();
-        </script>
     </body>
 </html>

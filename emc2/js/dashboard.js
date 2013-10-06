@@ -1,6 +1,8 @@
 $(function () {
     "use strict";
     var teams,
+        display_names       = [],
+        ids                 = [],
         current_viewed_team = -1,
         team_list           = $("#team_list"),
         team_edit_pane      = $("#team_edit_pane"),
@@ -11,72 +13,155 @@ $(function () {
         team_new            = $("#new"),
         team_delete         = $("#delete");
 
-    // Get the list of teams belonging to this user
-    function reloadTeams() {
+    function move_editpane(id) {
+        var team = teams[id];
+        if (id === current_viewed_team) {
+            if (team_edit_pane.css("display") !== "none") {
+                team_edit_pane.hide();
+            } else {
+                team_edit_pane.show();
+            }
+            return;
+        }
+        current_viewed_team = id;
+        team_new.show();
+        team_edit_pane.detach();
+        team_name.val(team.name);
+        team_member_inputs.each(function (index) {
+            this.value = team.members[index];
+        });
+        team_paid.text(team.paid ? "Paid" : "Unpaid");
+        team_participation.val(team.participation ? "On-Site" : "Online");
+        display_names[id].after(team_edit_pane);
+        team_edit_pane.show();
+    }
+
+    function getID(obj) {
+        var i;
+        for (i = 0; i < display_names.length; i += 1) {
+            if (obj === display_names[i][0]) {
+                return i;
+            }
+        }
+    }
+
+    function nameClick(event) {
+        move_editpane(getID(event.target));
+    }
+
+    // Get the teams belonging to this user
+    $.ajax({
+        url: "../wsgi-scripts/teams.py",
+        method: "GET",
+        data: {
+            purpose: "list"
+        },
+        success: function (data) {
+            var i, obj;
+            teams = data.teams;
+
+            // Generate the display names of the teams
+            for (i = 0; i < teams.length; i += 1) {
+                ids[i] = teams[i].id;
+                obj = $("<div>").addClass("team").text(teams[i].name).click(nameClick);
+                display_names.push(obj);
+                team_list.append(obj);
+            }
+        }
+    });
+
+    function getData(purpose) {
+        var name = team_name.val(),
+            members = [],
+            participation = "";
+        team_member_inputs.each(function () {
+            members.push(this.value);
+        });
+        participation = (team_participation.val() === "On-Site").toString();
+        if (purpose === "edit") {
+            return {
+                "purpose": purpose,
+                "id": ids[current_viewed_team],
+                "name": name,
+                "members": JSON.stringify(members),
+                "participation": participation
+            };
+        }
+        return {
+            "purpose": purpose,
+            "name": name,
+            "members": JSON.stringify(members),
+            "participation": participation
+        };
+    }
+
+    function register() {
+        var ret;
         $.ajax({
             url: "../wsgi-scripts/teams.py",
-            method: "GET",
-            data: {
-                purpose: "list"
-            },
-            dataType: "json",
+            method: "POST",
+            data: getData("register"),
             success: function (data) {
-                var i;
+                ret = data.id;
+            }
+        });
+        return ret;
+    }
 
-                team_list.html("");
-                teams = data.teams;
-                function nameClick() {
-                    var team = teams[i];
-                    return function () {
-                        // Toggle the edit pane
-                        if (team_edit_pane.css("display") === "none") {
-                            team_edit_pane.show();
-                            $("#new").hide();
-                        }
-                        current_viewed_team = team.id;
+    function edit() {
+        $.ajax({
+            url: "../wsgi-scripts/teams.py",
+            method: "POST",
+            data: getData("edit")
+        });
+    }
 
-                        // Set the inputs to be the information for this team
-                        team_name.val(team.name);
-                        team_member_inputs.each(function (k) {
-                            if (team.members[k]) {
-                                this.value = team.members[k];
-                            } else {
-                                this.value = "";
-                            }
-                        });
-                        if (team.paid) {
-                            team_paid.text("Paid");
-                        } else {
-                            team_paid.text("Unpaid");
-                        }
-                        if (team.participation) {
-                            team_participation.val("On-Site");
-                        } else {
-                            team_participation.val("Online");
-                        }
-                    };
-                }
-                for (i = 0; i < teams.length; i += 1) {
-                    team_list.append($("<div>").addClass("team").text(teams[i].name).click(nameClick()));
-                }
-            },
-            error: function () {
-                window.location.href = "login.shtml";
+    function delete_team(team_id) {
+        $.ajax({
+            url: "../wsgi-scripts/teams.py",
+            method: "POST",
+            data: {
+                purpose: "delete",
+                id: ids[team_id]
             }
         });
     }
 
-    reloadTeams();
 
-    team_new.click(function () {
-        team_name.val("");
-        team_member_inputs.val("");
-        team_paid.text("Unpaid");
-        team_participation.val("On-Site");
-        team_delete.hide();
-        team_new.hide();
-        team_edit_pane.show();
-        current_viewed_team = -1;
+    $("#save").click(function () {
+        var members = [], id, len = ids.length, obj;
+        team_member_inputs.each(function () {
+            members.push(this.value);
+        });
+        if (current_viewed_team === -1) {
+            id = register();
+            ids[len] = id;
+            teams[len] = {
+                id : id,
+                name : team_name.val(),
+                members : members,
+                participation : team_participation.val() === "On-Site",
+                paid: false
+            };
+            obj = $("<div>").addClass("team").text(teams[len].name).click(nameClick);
+            display_names.push(obj);
+            team_list.append(obj);
+        } else {
+            edit();
+            teams[current_viewed_team].name = team_name.val();
+            teams[current_viewed_team].members = members;
+            teams[current_viewed_team].participation = team_participation.val() === "On-Site";
+            display_names[current_viewed_team].text(team_name.val());
+        }
+        team_edit_pane.hide();
+    });
+
+    team_delete.click(function () {
+        delete_team(current_viewed_team);
+        delete teams[current_viewed_team];
+        display_names[current_viewed_team].remove();
+        display_names.splice(current_viewed_team, current_viewed_team);
+        team_edit_pane.hide();
     });
 
     $("#cancel").click(function () {
@@ -84,76 +169,23 @@ $(function () {
         team_edit_pane.hide();
     });
 
-    function getTeamMembers() {
-        var team_members = [];
+    team_new.click(function () {
+        current_viewed_team = -1;
+        team_delete.hide();
+        team_name.val("");
         team_member_inputs.each(function () {
-            var team_member = this.value;
-            team_members.push(team_member);
+            this.value = "";
         });
-        return team_members;
-    }
-
-    $("#save").click(function () {
-        if (current_viewed_team === -1) {
-            //Register a new team with this info
-            $.ajax({
-                url: "../wsgi-scripts/teams.py",
-                method: "POST",
-                data: {
-                    "purpose": "register",
-                    "name": team_name.val(),
-                    "members": JSON.stringify(getTeamMembers()),
-                    "participation": (team_participation.val() === "On-Site").toString()
-                },
-                success: function () {
-                    team_edit_pane.hide();
-                    reloadTeams();
-                    team_new.show();
-                    $("#delete").show();
-                }
-            });
-        } else {
-            $.ajax({
-                url: "../wsgi-scripts/teams.py",
-                method: "POST",
-                data: {
-                    "purpose": "edit",
-                    "id": current_viewed_team,
-                    "name": team_name.val(),
-                    "members": JSON.stringify(getTeamMembers()),
-                    "participation": team_participation.val() === "On-Site"
-                },
-                success: function () {
-                    team_edit_pane.hide();
-                    reloadTeams();
-                    team_new.show();
-                }
-            });
-        }
-    });
-
-    $("#delete").click(function () {
-        if (!confirm("Are you sure you want to delete this team?")) {
-            return;
-        }
-        $.ajax({
-            url: "../wsgi-scripts/teams.py",
-            method: "POST",
-            data: {
-                "purpose": "delete",
-                "id": current_viewed_team
-            },
-            success: function () {
-                team_edit_pane.hide();
-                reloadTeams();
-                team_new.show();
-            }
-        });
+        team_paid.text("Unpaid");
+        team_participation.val("On-Site");
+        team_new.after(team_edit_pane);
+        team_new.hide();
+        team_edit_pane.show();
     });
 
     $.ajax({
         url: "../wsgi-scripts/checkemail.py",
-        method: "POST",
+        method: "GET",
         success: function (data) {
             if (data === "False") {
                 $(".dialog").show();
@@ -164,8 +196,8 @@ $(function () {
                             url: "../wsgi-scripts/modify.py",
                             method: "POST",
                             data: {
-                                "columns": JSON.stringify([2]),
-                                "values": JSON.stringify([$("#dialog_input").val()])
+                                "columns": "[2]",
+                                "values": "[" + $("#dialog_input").val() + "]"
                             },
                             success: function () {
                                 $(".dialog").hide();

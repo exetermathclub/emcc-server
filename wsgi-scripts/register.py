@@ -20,7 +20,6 @@ def application(environ, start_response):
     realname = form['realname'].value
     password = form['password'].value
     orgname  = form['orgname'].value
-    address  = form['address'].value
 
     # Accessing the database to see if username is used
     cursor.execute("""
@@ -39,8 +38,8 @@ def application(environ, start_response):
         hashfun.update(password.encode())
         hashval = hashfun.hexdigest()
         cursor.execute("""
-        INSERT INTO users (username, email, realname, salt, hash, orgname, address) VALUES (?, ?, ?, ?, ?, ?, ?)
-        """, (username, email, realname, salt, hashval, orgname, address))
+        INSERT INTO users (username, email, realname, salt, hash, orgname) VALUES (?, ?, ?, ?, ?, ?)
+        """, (username, email, realname, salt, hashval, orgname))
         cursor.close()
         conn.commit()
         output = "true"

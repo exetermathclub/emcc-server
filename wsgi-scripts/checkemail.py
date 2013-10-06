@@ -42,7 +42,6 @@ def application(environ, start_response):
     output = ""
     conn = sqlite3.connect('/home/mathclub/public_html/wsgi-scripts/auth.db')
     cursor = conn.cursor()
-    cursor.execute('PRAGMA synchronous=OFF')
     cursor.execute('PRAGMA temp_store=MEMORY')
     result = False
     if check(environ['HTTP_COOKIE']):

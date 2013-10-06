@@ -33,11 +33,6 @@
              ga('create', 'UA-38541594-3', 'exeter.edu');
              ga('send', 'pageview');
         </script>
-        <style>
-            .field_label {
-                display: block;
-            }
-        </style>
     </head>
     <body>
         <!--[if lt IE 7]>

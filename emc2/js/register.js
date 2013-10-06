@@ -1,24 +1,22 @@
 $(function () {
     "use strict";
-    var fields = [$("#username"), $("#email"), $("#realname"), $("#password"), $("#confirm"), $("#team"), $("#address")],
+    var fields = [$("#username"), $("#email"), $("#realname"), $("#password"), $("#confirm"), $("#team")],
         tips = [$("#username_tip"),
                 $("#email_tip"),
                 $("#realname_tip"),
                 $("#password_tip"),
                 $("#confirm_tip"),
-                $("#team_tip"),
-                $("#address_tip")],
+                $("#team_tip")],
         username_el = $("#username"),
         email_el    = $("#email"),
         realname_el = $("#realname"),
         password_el = $("#password"),
         team_el     = $("#team"),
-        address_el  = $("#address"),
         button_el   = $("#button");
 
     function verify() {
         var i, ret = true;
-        for (i = 0; i < 7; i += 1) {
+        for (i = 0; i < 6; i += 1) {
             if (i === 4) {
                 if (fields[4].val() !== fields[3].val()) {
                     tips[4].text("Passwords do not match.");
@@ -37,7 +35,7 @@ $(function () {
     }
 
     // Register a user with the given data, then redirect to login
-    function register(username, email, realname, password, orgname, address) {
+    function register(username, email, realname, password, orgname) {
         $.ajax({
             url: "../wsgi-scripts/register.py",
             method: "POST",
@@ -46,8 +44,7 @@ $(function () {
                 "email": email,
                 "realname": realname,
                 "password": CryptoJS.SHA512(password).toString(CryptoJS.enc.Hex),
-                "orgname": orgname,
-                "address": address
+                "orgname": orgname
             },
             dataType: "text",
             success: function (data) {
@@ -63,7 +60,7 @@ $(function () {
 
     button_el.click(function () {
         if (verify()) {
-            register(username_el.val(), email_el.val(), realname_el.val(), password_el.val(), team_el.val(), address_el.val());
+            register(username_el.val(), email_el.val(), realname_el.val(), password_el.val(), team_el.val());
         }
     });
 

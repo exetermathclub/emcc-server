@@ -58,12 +58,12 @@ def register(uname, form):
         "id": cursor.lastrowid
     })
 
-def edit(form):
+def edit(uname, form):
     # Connect to the teams database
     (conn, cursor) = setup_cursor()
 
     # Update the team
-    cursor.execute('UPDATE teams SET name = ?, members = ?, participation = ? WHERE id = ?', (form['name'].value, form['members'].value, form['participation'].value == 'true', form['id'].value))
+    cursor.execute('UPDATE teams SET name = ?, members = ?, participation = ? WHERE id = ? AND username = ?', (form['name'].value, form['members'].value, form['participation'].value == 'true', form['id'].value, uname))
 
     # Commit and close the teams database
     conn.commit()
@@ -99,12 +99,12 @@ def print_list(uname):
         "teams": teams
     })
 
-def delete(form):
+def delete(uname, form):
     # Connect to the teams database
     (conn, cursor) = setup_cursor()
 
     # Delete the requested team
-    cursor.execute('DELETE FROM teams WHERE id = ?', [form['id'].value])
+    cursor.execute('DELETE FROM teams WHERE id = ? AND username = ?', (form['id'].value, uname))
 
     # Commit and close the teams database
     conn.commit()
@@ -135,9 +135,9 @@ def application(environ, start_response):
         if purpose == 'register':
             output = register(uname, form)
         elif purpose == 'edit':
-            output = edit(form)
+            output = edit(uname, form)
         elif purpose == 'delete':
-            output = delete(form)
+            output = delete(uname, form)
         else:
             output = print_list(uname)
 

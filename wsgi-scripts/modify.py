@@ -50,17 +50,17 @@ def application(environ, start_response):
         environ=environ,
         keep_blank_values=True
     )
+
     if check(environ['HTTP_COOKIE']):
-        uname     = username(environ['HTTP_COOKIE'])
-        columns   = json.loads(form['columns'].value)
-        values    = json.loads(form['values'].value)
+        uname = username(environ['HTTP_COOKIE'])
+        info = json.loads(form['info'].value)
 
         # Accessing the database
-        for column in columns:
-            for value in values:
-                cursor.execute("UPDATE users SET %s=? WHERE username=?" % (["username", "realname", "email", "orgname", "address", "salt", "hash"][column],), (value, uname))
+        for key in info:
+            cursor.execute("UPDATE users SET %s=? WHERE username=?" % (["username", "realname", "email", "orgname", "address", "salt", "hash"][int(key)],), (info[key], uname))
         conn.commit()
         conn.close()
+
     status = '200 OK'
     response_headers = [('Content-type', 'text/plain'),
                         ('Content-Length', str(len(output)))]

@@ -35,7 +35,6 @@ def application(environ, start_response):
         cookie_text = username + ":" + base64.b64encode(os.urandom(128)).decode()
         cookie['EMCC'] = cookie_text
         cookie['EMCC']['max-age'] = str(24 * 60 * 60) # Cookie expires in one day
-        cookie['EMCC']['httponly'] = '1' # Prevent potential cross-site scripting
         cookie['EMCC']['path'] = '/'
         cursor.execute("UPDATE users SET cookie = ? WHERE username = ?", (cookie_text, username))
         output = json.dumps({"correct":hashval==dbhash})

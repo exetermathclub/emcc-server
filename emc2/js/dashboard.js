@@ -176,6 +176,9 @@ $(function () {
     });
 
     team_delete.click(function () {
+        if (!confirm("Are you sure you want to delete this team?")) {
+            return;
+        }
         delete_team(current_viewed_team);
         delete teams[current_viewed_team];
         display_names[current_viewed_team].remove();
@@ -216,8 +219,9 @@ $(function () {
                             url: "../wsgi-scripts/modify.py",
                             method: "POST",
                             data: {
-                                "columns": "[2]",
-                                "values": "[" + $("#dialog_input").val() + "]"
+                                "info": JSON.stringify({
+                                    2: $("#dialog_input").val()
+                                })
                             },
                             success: function () {
                                 $(".dialog").hide();

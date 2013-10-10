@@ -1,38 +1,56 @@
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
         <div id="topbar">
             <div id="topbar_text">
-                <div class="h1" id="name"><a href="index.shtml" class="selflink">Exeter Math Club Competition</a></div>
+                <div class="h1" id="name"><a href="/~mathclub/emc2/index.shtml" class="selflink">Exeter Math Club Competition</a></div>
                 <hr id="top_divider">
                 <div class="h2" id="abbr">EMC<sup>2</sup></div>
             </div>
-            <a href="index.shtml"><img src="img/EMC2_Logo_Transparent.png" id="emcc_logo" alt="EMCC Logo"></a>
+            <a href="/~mathclub/emc2/index.shtml"><img src="/~mathclub/emc2/img/EMC2_Logo_Transparent.png" id="emcc_logo" alt="EMCC Logo"></a>
         </div>
 
         <div id="navbar">
-            <a href="index.shtml" class="navbar_section_header">Home</a>
+            <a href="/~mathclub/emc2/index.shtml" class="navbar_section_header">Home</a>
             <div id="information">
-                <a href="contest_information.shtml" class="navbar_section_header">Contest Information</a>
+                <a href="/~mathclub/emc2/contest_information.shtml" class="navbar_section_header">Contest Information</a>
                 <div class="navbar_section">
-                    <a href="contest_information.shtml#Schedule">Schedule</a>
-                    <a href="contest_information.shtml#Format">Format</a>
-                    <a href="contest_information.shtml#Rules">Rules</a>
+                    <a href="/~mathclub/emc2/contest_information.shtml#Schedule">Schedule</a>
+                    <a href="/~mathclub/emc2/contest_information.shtml#Format">Format</a>
+                    <a href="/~mathclub/emc2/contest_information.shtml#Rules">Rules</a>
                 </div>
-                <a href="travel_information.shtml" class="navbar_section_header">Travel Information</a>
+                <a href="/~mathclub/emc2/travel_information.shtml" class="navbar_section_header">Travel Information</a>
                 <div class="navbar_section">
-                    <a href="travel_information.shtml#CampusMap">Campus Map</a>
-                    <a href="travel_information.shtml#Parking">Parking</a>
-                    <a href="travel_information.shtml#Transportation">Transportation</a>
-                    <a href="travel_information.shtml#Lodging">Lodging</a>
+                    <a href="/~mathclub/emc2/travel_information.shtml#CampusMap">Campus Map</a>
+                    <a href="/~mathclub/emc2/travel_information.shtml#Parking">Parking</a>
+                    <a href="/~mathclub/emc2/travel_information.shtml#Transportation">Transportation</a>
+                    <a href="/~mathclub/emc2/travel_information.shtml#Lodging">Lodging</a>
                 </div>
-                <a href="faq.shtml" class="navbar_section_header">FAQ</a>
+                <a href="/~mathclub/emc2/faq.shtml" class="navbar_section_header">FAQ</a>
             </div>
             <div id="online">
-                <a href="online_tournament.shtml" class="navbar_section_header">Online Tournament</a>
+                <a href="/~mathclub/emc2/online_tournament.shtml" class="navbar_section_header">Online Tournament</a>
             </div>
             <div id="coaches">
-                <a href="login.shtml" class="navbar_section_header">Coaches</a>
+                <div class="navbar_section_header" id="archive_link">Coaches</div>
                 <div class="navbar_section">
-                    <a href="login.shtml">Login</a>
-                    <a href="register.shtml">Register</a>
+                    <div id="logged_in" style="display:none">
+                        <a href="/~mathclub/emc2/dashboard.shtml">Dashboard</a>
+                        <a id="logout_link" href="javascript:0">Logout</a>
+                    </div>
+                    <div id="logged_out">
+                        <a href="/~mathclub/emc2/login.shtml">Login</a>
+                        <a href="/~mathclub/emc2/register.shtml">Register</a>
+                    </div>
+                    <div id="is_admin" style="display:none">
+                        <a id="admin_logout" href="javascript:0">Logout</a>
+                        <a href="/~mathclub/emc2/admin.shtml">Dashboard</a>
+                    </div>
                 </div>
             </div>
             <div id="archive">
@@ -40,28 +58,50 @@
                 <div class="navbar_section" id="archive_section">
                     2013
                     <div class="archive_indent">
-                        <a href="archive/emcc13all.pdf">Problems and Solutions</a>
-                        <a href="archive/emcc13results.shtml">Results</a>
+                        <a href="/~mathclub/emc2/archive/emcc13all.pdf">Problems and Solutions</a>
+                        <a href="/~mathclub/emc2/archive/emcc13results.shtml">Results</a>
                     </div>
                     2012
                     <div class="archive_indent">
-                        <a href="archive/emcc12all.pdf">Problems and Solutions</a>
-                        <a href="archive/emcc12results.shtml">Results</a>
+                        <a href="/~mathclub/emc2/archive/emcc12all.pdf">Problems and Solutions</a>
+                        <a href="/~mathclub/emc2/archive/emcc12results.shtml">Results</a>
                     </div>
                     2011
                     <div class="archive_indent">
-                        <a href="archive/emcc11all.pdf">Problems and Solutions</a>
-                        <a href="archive/emcc11results.shtml">Results</a>
+                        <a href="/~mathclub/emc2/archive/emcc11all.pdf">Problems and Solutions</a>
+                        <a href="/~mathclub/emc2/archive/emcc11results.shtml">Results</a>
                     </div>
                     2010
                     <div class="archive_indent">
-                        <a href="archive/emcc10all.pdf">Problems</a>
-                        <a href="archive/emcc10sol.pdf">Solutions</a>
-                        <a href="archive/emcc10results.shtml">Results</a>
+                        <a href="/~mathclub/emc2/archive/emcc10all.pdf">Problems</a>
+                        <a href="/~mathclub/emc2/archive/emcc10sol.pdf">Solutions</a>
+                        <a href="/~mathclub/emc2/archive/emcc10results.shtml">Results</a>
                     </div>
                 </div>
             </div>
             <div id="contact">
-                <a href="contact.shtml" class="navbar_section_header">Contact us</a>
+                <a href="/~mathclub/emc2/contact.shtml" class="navbar_section_header">Contact us</a>
             </div>
         </div>
+        <script type="text/javascript">
+            window.onload = function() {
+                if (localStorage && (localStorage.getItem("SRP_ID") != null)) {
+                    $("#is_admin").show(); $("#logged_out").hide();
+                    $("#admin_logout").click(function() {
+                        localStorage.removeItem("SRP_ID");
+                        localStorage.removeItem("SRP_SESS_KEY");
+                        location.reload();
+                    });
+                }
+                else if (document.cookie.indexOf("EMCC=\"") > 0) {
+                    $("#logged_out").hide();
+                    $("#logged_in").show();
+                    $("#logout_link").click(function() {
+                        $.ajax({
+                            url: "../wsgi-scripts/logout.py",
+                            success: function() { location.reload(); }
+                        });
+                    });
+                }
+            }
+        </script>

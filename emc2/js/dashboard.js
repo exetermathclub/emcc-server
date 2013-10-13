@@ -31,6 +31,7 @@ $(function () {
             current_viewed_team = id;
             
             //Remove the existing edit pane, and show the "new team" button if it is invisible
+            team_delete.show();
             team_new.show();
             team_edit_pane.detach();
 

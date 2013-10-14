@@ -73,9 +73,9 @@ button.field:hover {
 button {
     font-family: georgia, times, serif;
 }
+
 .dialog {
     z-index: 5;
-    height: 100px;
     width: 200px;
     padding: 30px;
     background-color: #FFF;

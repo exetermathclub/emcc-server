@@ -31,6 +31,7 @@
   
   var generator = int2bigInt(2, 1, 1),
       mul_param = int2bigInt(3, 1, 1),
+      crypto    = window.crypto || window.msCrypto;
       large_prime = str2bigInt("b62ab56bcad9e423c6f871dc6198c9f28b4672a8d9bf219693359435181e17bd1e225fd5e178968d6e074aff175f435a4f729c564b42aa5ec68df7feac1c02f226f882ed570d25beaa0ba9adeae7a7bcc83df8eeb24ef89d4370a20486416c9e5b3c351243a3a178211993053491c3f13399e4e77c4df40de0397ee315f847b3", 16, 1);
 
   function randInt(n) {

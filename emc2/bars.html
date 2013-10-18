@@ -90,7 +90,7 @@
                     $("#admin_logout").click(function() {
                         localStorage.removeItem("SRP_ID");
                         localStorage.removeItem("SRP_SESS_KEY");
-                        location.reload();
+                        window.location.href = "login.shtml";
                     });
                 }
                 else if (document.cookie.indexOf("EMCC=\"") > 0) {
@@ -99,7 +99,9 @@
                     $("#logout_link").click(function() {
                         $.ajax({
                             url: "../wsgi-scripts/logout.py",
-                            success: function() { location.reload(); }
+                            success: function() {
+                                window.location.href = "login.shtml";
+                            }
                         });
                     });
                 }

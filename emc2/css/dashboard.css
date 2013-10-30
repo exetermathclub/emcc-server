@@ -102,3 +102,7 @@ button {
 #new {
     margin-top: 5px;
 }
+
+.show_when_indiv {
+    display: none;
+}

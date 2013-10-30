@@ -3,6 +3,7 @@ $(function () {
     var teams,
         display_names       = [],
         ids                 = [],
+        current_individual = false,
         current_viewed_team = -1,
         team_list           = $("#team_list"),
         team_edit_pane      = $("#team_edit_pane"),
@@ -11,7 +12,10 @@ $(function () {
         team_participation  = $("#participation"),
         team_name           = $("#team_name"),
         team_new            = $("#new"),
-        team_delete         = $("#delete");
+        team_delete         = $("#delete"),
+        team_individual     = $("#individual_checkbox"),
+        indiv_hidden        = $(".hide_when_indiv"),
+        indiv_shown         = $(".show_when_indiv");
 
     function move_editpane(id) {
         /*
@@ -42,6 +46,18 @@ $(function () {
             });
             team_paid.text(team.paid ? "Paid" : "Unpaid");
             team_participation.val(team.participation ? "On-Site" : "Online");
+            
+            //Update individuality
+            current_individual = team.individual;
+            team_individual.prop('checked', current_individual);
+            if (!current_individual) {
+                indiv_hidden.show();
+                indiv_shown.hide();
+            }
+            else {
+                indiv_hidden.hide();
+                indiv_shown.show();
+            } 
 
             //Reappend the edit pane where we want it, then make it visible
             display_names[id].after(team_edit_pane);
@@ -104,14 +120,16 @@ $(function () {
                 "id": ids[current_viewed_team],
                 "name": name,
                 "members": JSON.stringify(members),
-                "participation": participation
+                "participation": participation,
+                "individual": team_individual.prop('checked') ? 'true' : 'false'
             };
         }
         return {
             "purpose": purpose,
             "name": name,
             "members": JSON.stringify(members),
-            "participation": participation
+            "participation": participation,
+            "individual": team_individual.prop('checked') ? 'true' : 'false'
         };
     }
 
@@ -171,6 +189,7 @@ $(function () {
             teams[current_viewed_team].name = team_name.val();
             teams[current_viewed_team].members = members;
             teams[current_viewed_team].participation = team_participation.val() === "On-Site";
+            teams[current_viewed_team].individual = team_individual.prop('checked');
             display_names[current_viewed_team].text(team_name.val());
         }
         team_edit_pane.hide();
@@ -192,8 +211,23 @@ $(function () {
         team_edit_pane.hide();
     });
 
+    team_individual.click(function() {
+        current_individual = $(this).prop('checked');
+        if (!current_individual) {
+            indiv_hidden.show();
+            indiv_shown.hide();
+        }
+        else {
+            indiv_hidden.hide();
+            indiv_shown.show();
+        } 
+    });
+
     team_new.click(function () {
         current_viewed_team = -1;
+        current_individual = false;
+        indiv_hidden.show();
+        indiv_shown.hide();
         team_delete.hide();
         team_name.val("");
         team_member_inputs.each(function () {

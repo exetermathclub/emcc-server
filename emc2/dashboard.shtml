@@ -48,12 +48,15 @@
                     </div>
                 </div>
                 <div id="team_edit_pane">
-                    <div class="field_wrapper"><span class="field_label">Team name: </span><input class="field" id="team_name"></div>
+                    <div class="field_wrapper"><span class="hide_when_indiv"><span class="field_label">Team name: </span></span><span class="show_when_indiv"><span class="field_label">Name: </span></span><input class="field" id="team_name"></div>
                     <div class="content_body">
-                        <div class="field_wrapper"><span class="field_label">Team member 1: </span><input class="field team_member"></div>
-                        <div class="field_wrapper"><span class="field_label">Team member 2: </span><input class="field team_member"></div>
-                        <div class="field_wrapper"><span class="field_label">Team member 3: </span><input class="field team_member"></div>
-                        <div class="field_wrapper"><span class="field_label">Team member 4: </span><input class="field team_member"></div>
+                        <div class="hide_when_indiv">
+                            <div class="field_wrapper"><span class="field_label">Team member 1: </span><input class="field team_member"></div>
+                            <div class="field_wrapper"><span class="field_label">Team member 2: </span><input class="field team_member"></div>
+                            <div class="field_wrapper"><span class="field_label">Team member 3: </span><input class="field team_member"></div>
+                            <div class="field_wrapper"><span class="field_label">Team member 4: </span><input class="field team_member"></div>
+                        </div>
+                        <div class="field_wrapper"><span class="field_label">Individual:</span><input type="checkbox" id="individual_checkbox"/></div>
                         <div class="field_wrapper"><span class="field_label">Payment status: </span><span class="field" id="paid">Unpaid</span></div>
                         <div class="field_wrapper"><span class="field_label">Partipation: </span><select class="field" id="participation">
                             <option value="On-Site">On Site</option>

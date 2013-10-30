@@ -46,8 +46,8 @@ def register(uname, form):
 
     # Create the team
     cursor.execute('''
-    INSERT INTO teams (username, name, members, paid, participation) VALUES (?, ?, ?, ?, ?)
-    ''', (uname, form['name'].value, form['members'].value, False, form['participation'].value == 'true'))
+    INSERT INTO teams (username, name, members, paid, participation, individual) VALUES (?, ?, ?, ?, ?, ?)
+    ''', (uname, form['name'].value, form['members'].value, False, form['participation'].value == 'true', form['individual'].value == 'true'))
 
     # Commit our changes and close the database
     conn.commit()
@@ -63,7 +63,7 @@ def edit(uname, form):
     (conn, cursor) = setup_cursor()
 
     # Update the team
-    cursor.execute('UPDATE teams SET name = ?, members = ?, participation = ? WHERE id = ? AND username = ?', (form['name'].value, form['members'].value, form['participation'].value == 'true', form['id'].value, uname))
+    cursor.execute('UPDATE teams SET name = ?, members = ?, participation = ?, individual = ? WHERE id = ? AND username = ?', (form['name'].value, form['members'].value, form['participation'].value == 'true', form['individual'].value == 'true', form['id'].value, uname))
 
     # Commit and close the teams database
     conn.commit()
@@ -92,7 +92,8 @@ def print_list(uname):
             "name": row[2],
             "members": json.loads(row[3]),
             "paid": row[4],
-            "participation": row[5]
+            "participation": row[5],
+            "individual": row[6] == 1
         })
     # JSON serialize them and return
     return json.dumps({

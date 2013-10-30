@@ -2,13 +2,14 @@ $(function () {
     "use strict";
 
     //Retrieve the locally stored session key and id
-    var srp_string = localStorage.getItem("SRP_SESS_KEY"),
-        srp_id = localStorage.getItem("SRP_ID"),
+    var srp_string = localStorage.SRP_SESS_KEY,
+        srp_id = localStorage.SRP_ID,
         srp_key;
 
     //If we haven't logged in correctly, tell the user to do so
     if (!srp_string || !srp_id) {
-        location.href = "login.shtml";
+        window.location.href = "login.shtml";
+        return;
     }
 
     //Parse the locally stored srp key
@@ -19,7 +20,7 @@ $(function () {
             .append($("<td class='team_id'>").text(row[0]))
             .append($("<td class='team_coach'>").text(row[1]))
             .append($("<td class='team_name'>").text(row[2]))
-            .append($("<td class='team_members'>").text(JSON.parse(row[3]).join(", ")))
+            .append($("<td class='team_members'>").text(row[6] === 1? "<INDIVIDUAL>" : JSON.parse(row[3]).join(", ")))
             .append($("<td class='team_participation'>").text(row[5] ? "On-Site" : "Online"))
             .append($("<td class='team_payment'>").append((row[4] ? $("<input type='checkbox'/>").attr("checked", "") : $("<input type='checkbox'/>"))
                 .addClass("payment_checkbox")

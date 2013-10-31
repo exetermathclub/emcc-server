@@ -22,8 +22,6 @@ def application(environ, start_response):
     cursor.execute("SELECT salt, hash FROM users WHERE username = ?", [username])
     ret = cursor.fetchone()
     
-    output = None
-
     if ret is not None:
         salt = ret[0]
         dbhash = ret[1]
@@ -37,8 +35,8 @@ def application(environ, start_response):
         cookie['EMCC']['max-age'] = str(24 * 60 * 60) # Cookie expires in one day
         cookie['EMCC']['path'] = '/'
         cursor.execute("UPDATE users SET cookie = ? WHERE username = ?", (cookie_text, username))
-        output = json.dumps({"correct":hashval==dbhash})
-        correct = True
+        correct = hashval == dbhash
+        output = json.dumps({"correct": correct})
     else:
         output = json.dumps({
             "correct": False

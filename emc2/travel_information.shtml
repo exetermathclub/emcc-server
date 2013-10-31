@@ -13,7 +13,6 @@
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/emcc.css">
-        <link rel="stylesheet" type="text/css" href="css/contest_information.min.css">
 
         <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
 

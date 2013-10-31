@@ -184,6 +184,7 @@ $(function () {
             obj = $("<div>").addClass("team").text(teams[len].name).click(nameClick);
             display_names.push(obj);
             team_list.append(obj);
+            team_new.show();
         } else {
             edit();
             teams[current_viewed_team].name = team_name.val();

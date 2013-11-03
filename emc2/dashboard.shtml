@@ -94,7 +94,7 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script type="text/javascript" src="js/plugins.js"></script>
-        <script type="text/javascript" src="js/dashboard.js"></script>
+        <script type="text/javascript" src="js/dashboard.min.js"></script>
         <script type="text/javascript">
             $("#archive_link").click(function () {
                 "use strict";

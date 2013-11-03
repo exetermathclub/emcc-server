@@ -75,7 +75,7 @@
         <script type="text/javascript" src="js/sha512.js"></script>
         <script type="text/javascript" src="js/jslib/rollups/sha256.js"></script>
         <script type="text/javascript" src="js/jslib/BigInt.js"></script>
-        <script type="text/javascript" src="js/jslib/auth.js"></script>
+        <script type="text/javascript" src="js/jslib/auth.min.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
     </body>
 </html>

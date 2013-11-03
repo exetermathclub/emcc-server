@@ -13,7 +13,19 @@
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/emcc.css">
-        <link rel="stylesheet" type="text/css" href="css/admin.css">
+
+        <style>
+            table#team_table {
+                margin-top: 10px;
+            }
+            table#team_table td {
+                margin: 0;
+                padding: 10px;
+            }
+            td.table_header {
+                font-weight: bold;
+            }
+        </style>
         
         <!-- Google Analytics -->
         <script type="text/javascript">
@@ -61,7 +73,7 @@
         <script type="text/javascript" src="js/sha512.js"></script>
         <script type="text/javascript" src="js/jslib/rollups/sha256.js"></script>
         <script type="text/javascript" src="js/jslib/BigInt.js"></script>
-        <script type="text/javascript" src="js/jslib/auth.js"></script>
+        <script type="text/javascript" src="js/jslib/auth.min.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/admin.js"></script>
     </body>

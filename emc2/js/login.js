@@ -142,4 +142,10 @@ $(function () {
         }
     });
 
+    submit_el.keypress(function (e) {
+        if (e && e.keyCode === 13) {
+            submit_el.click();
+        }
+    });
+
 });

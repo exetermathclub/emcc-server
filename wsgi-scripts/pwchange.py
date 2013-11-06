@@ -15,7 +15,9 @@ def application(environ, start_response):
         environ=environ,
         keep_blank_values=True
     )
-    output = "true"
+    output = json.dumps({
+        "success": True
+    })
     username = form['username'].value
     password = form['password'].value
     key = form['key'].value
@@ -35,7 +37,9 @@ def application(environ, start_response):
         cursor.close()
         conn.commit()
     else:
-        output = "false"
+        output = json.dumps({
+            "success": False
+        })
 
     status = '200 OK'
     response_headers = [('Content-type', 'text/plain'),

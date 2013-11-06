@@ -5,10 +5,10 @@ $(function () {
         password_el = $("#password"),
         confirm_el = $("#confirm"),
         submit_el = $("#submit"),
-        raw_qs = window.location.search.substring(1),
-        qs = {}, queries, temp, i, l;
+        qs = {},
+        queries;
 
-    queries = raw_qs.split("&key=");
+    queries = window.location.search.substring(1).split("&key=");
     qs.username = queries[0].substring(9);
     qs.key = queries[1];
 
@@ -41,7 +41,7 @@ $(function () {
                 "password": CryptoJS.SHA512(password).toString(CryptoJS.enc.Hex)
             },
             dataType: "json",
-            success: function (data) {
+            success: function () {
                 window.location.href = "login.shtml";
             }
         });

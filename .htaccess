@@ -1,0 +1,24 @@
+DirectoryIndex index.shtml index.html
+# Insert filter
+SetOutputFilter DEFLATE
+
+# Netscape 4.x has some problems...
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+
+# Netscape 4.06-4.08 have some more problems
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+
+# MSIE masquerades as Netscape, but it is fine
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+# Don't compress images
+SetEnvIfNoCase Request_URI \
+\.(?:gif|jpe?g|png)$ no-gzip dont-vary
+
+ExpiresActive On
+ExpiresDefault "access plus 1 month"
+
+#RewriteEngine On
+#RewriteCond %{SERVER_PORT} 80
+#RewriteBase /~mathclub/
+# RewriteRule ^(.*)$ https://%{SERVER_NAME}/~mathclub/$1 [PT]
+# This rule will redirect all users who are using any part of /secure/ to the same location but using HTTPS.

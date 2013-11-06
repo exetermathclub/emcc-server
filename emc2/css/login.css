@@ -4,7 +4,7 @@
 
 .field_label {
     display: inline-block;
-    width: 100px;
+    width: 150px;
 }
 
 input.field {
@@ -29,4 +29,31 @@ button.field {
 
 button {
     font-family: georgia, times, serif;
+}
+
+#dialog {
+    display: none;
+    text-align: center;
+    z-index: 5;
+    width: 300px;
+    padding: 30px;
+    background-color: #FFF;
+    border: 1px solid #888;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -80px;
+    margin-left: -180px;
+}
+
+#cover {
+    display: none;
+    z-index: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: #888;
 }

@@ -85,7 +85,7 @@
         </div>
 
         <div class="dialog">
-            <div class="field_wrapper">We don't have your email on file, please enter your email: <input class="field" id="dialog_input"/></div>
+            <div class="field_wrapper">We don't have your email on file, please enter your email: <input class="field" id="dialog_input"/></div> <span id="dialog_tip"></span>
             <div class="field_wrapper"><button class="field" id="dialog_submit">Submit</button></div>
         </div>
         

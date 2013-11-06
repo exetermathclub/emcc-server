@@ -7,7 +7,6 @@ import base64
 from http import cookies
 
 def application(environ, start_response):
-    output = "{\"success\":\"\"}"
     correct = False
     # Initializing
     conn = sqlite3.connect('/home/mathclub/public_html/wsgi-scripts/auth.db')
@@ -36,7 +35,9 @@ def application(environ, start_response):
         cookie['EMCC']['path'] = '/'
         cursor.execute("UPDATE users SET cookie = ? WHERE username = ?", (cookie_text, username))
         correct = hashval == dbhash
-        output = json.dumps({"correct": correct})
+        output = json.dumps({
+            "correct": correct
+        })
     else:
         output = json.dumps({
             "correct": False

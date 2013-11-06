@@ -4,7 +4,11 @@ $(function () {
         password_tip = $("#password_tip"),
         username_el = $("#username"),
         password_el = $("#password"),
-        button_el = $("#button");
+        button_el = $("#button"),
+        dialog_el = $("#dialog"),
+        cover_el = $("#cover"),
+        dialog_input_el = $("#dialog_input"),
+        submit_el = $("#dialog_submit");
 
     function verify() {
         var ret = true;
@@ -95,6 +99,39 @@ $(function () {
     password_el.keypress(function (e) {
         if (e && e.keyCode === 13) {
             button_el.click();
+        }
+    });
+
+    function forget_submit(username) {
+        $.ajax({
+            url: "../wsgi-scripts/resetemail.py",
+            method: "GET",
+            data: {
+                "username": username
+            },
+            success: function () {
+                dialog_el.text("We have sent the password reset information to your email, please check your email.");
+                dialog_el.show();
+                cover_el.show();
+            }
+        });
+    }
+
+    $("#forgot").click(function () {
+        dialog_el.show();
+        cover_el.show();
+    });
+
+    cover_el.click(function () {
+        $(this).hide();
+        dialog_el.hide();
+    });
+
+    submit_el.click(function () {
+        if (dialog_input_el.val() !== "") {
+            forget_submit(dialog_input_el.val());
+        } else {
+            dialog_input_el.css("background-color", "yellow");
         }
     });
 

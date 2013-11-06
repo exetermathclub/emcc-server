@@ -47,14 +47,20 @@
                   <span class="field_label">Username:</span> <input class="field" id="username" autofocus autocorrect="off" autocapitalize="off" spellcheck="false"> <span id="username_tip"></span>
                 </div>
                 <div class="field_wrapper">
-                  <span class="field_label">Password:</span> <input type="password" class="field" id="password"> <span id="password_tip"></span>
+                  <span class="field_label">Password:</span> <input type="password" class="field" id="password"> <span id="password_tip"></span> 
                 </div>
-                <button class="field" id="button">Login</button>
+                <button class="field" id="button">Login</button> <a id="forgot" href="javascript:0">Forgot password</a>
             </div>
             <div class="post">
                 *If you made an account in previous years, you will need to register again.
             </div>
         </div>
+
+        <div id="dialog">
+            <div class="field_wrapper">Please enter your username:<input class="field" id="dialog_input"></div>
+            <div class="field_wrapper"><button class="field" id="dialog_submit">Submit</button></div>
+        </div>
+        <div id="cover"></div>
 <!--#include virtual="footer.html" -->
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
@@ -72,7 +78,6 @@
         </script>
         <script type="text/javascript" src="js/sha512.js"></script>
         <script type="text/javascript" src="js/jslib/rollups/aes.js"></script>
-        <script type="text/javascript" src="js/sha512.js"></script>
         <script type="text/javascript" src="js/jslib/rollups/sha256.js"></script>
         <script type="text/javascript" src="js/jslib/BigInt.js"></script>
         <script type="text/javascript" src="js/jslib/auth.min.js"></script>

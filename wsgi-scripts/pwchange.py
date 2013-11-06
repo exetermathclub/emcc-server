@@ -25,7 +25,7 @@ def application(environ, start_response):
     server_key = cursor.fetchone()[0]
     if server_key == key:
         # Generate a random salt
-        salt = base64.b64encode(os.urandom(128))
+        salt = base64.b64encode(os.urandom(32))
         # Hash the password and the salt together
         hashfun = hashlib.sha512()
         hashfun.update(salt)

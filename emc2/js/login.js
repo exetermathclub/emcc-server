@@ -113,6 +113,11 @@ $(function () {
                 dialog_el.text("We have sent the password reset information to your email, please check your email.");
                 dialog_el.show();
                 cover_el.show();
+                setTimeout(function () {
+                    dialog_el.hide();
+                    cover_el.hide();
+                    $("body").css("cursor", "");
+                }, 2000);
             }
         });
     }
@@ -129,6 +134,8 @@ $(function () {
 
     submit_el.click(function () {
         if (dialog_input_el.val() !== "") {
+            $(this).attr("disabled", "");
+            $("body").css("cursor", "wait", "important");
             forget_submit(dialog_input_el.val());
         } else {
             dialog_input_el.css("background-color", "yellow");

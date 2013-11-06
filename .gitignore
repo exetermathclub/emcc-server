@@ -1,1 +1,6 @@
-resetemail.py
+PASSWORD
+*.swp
+*.swo
+auth.db
+auth_srp.db
+*.pyc

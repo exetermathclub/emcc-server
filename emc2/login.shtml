@@ -47,7 +47,7 @@
                   <span class="field_label">Username:</span> <input class="field" id="username" autofocus autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="1" type="text"> <span id="username_tip"></span>
                 </div>
                 <div class="field_wrapper">
-                    <span class="field_label">Password:<a href="javascript:0" id="forgot">(Forgot)</a></span> <input type="password" class="field" id="password" tabindex="2" type="text"> <span id="password_tip"></span> 
+                    <span class="field_label">Password:<a id="forgot">(Forgot password)</a></span> <input type="password" class="field" id="password" tabindex="2"> <span id="password_tip"></span> 
                 </div>
                 <button class="field" id="button">Login</button>
             </div>
@@ -57,7 +57,7 @@
         </div>
 
         <div id="dialog">
-            <div class="field_wrapper">Please enter your username:<input class="field" id="dialog_input"></div>
+            <div class="field_wrapper"><div id="prompt">Please enter your username:</div><input class="field" id="dialog_input"></div>
             <div class="field_wrapper"><button class="field" id="dialog_submit">Submit</button></div>
         </div>
         <div id="cover"></div>

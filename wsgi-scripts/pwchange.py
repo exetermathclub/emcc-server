@@ -1,6 +1,7 @@
 import cgi
 import sqlite3
 import os
+import json
 import hashlib
 import base64
 
@@ -18,6 +19,7 @@ def application(environ, start_response):
     output = json.dumps({
         "success": True
     })
+
     username = form['username'].value
     password = form['password'].value
     key = form['key'].value
@@ -33,7 +35,7 @@ def application(environ, start_response):
         hashfun.update(salt)
         hashfun.update(password.encode())
         hashval = hashfun.hexdigest()
-        cursor.execute("UPDATE users SET salt = ?, hash = ? WHERE username = ?", (salt, hashval, username))
+        cursor.execute("UPDATE users SET salt = ?, hash = ?, key = NULL WHERE username = ?", (salt, hashval, username))
         cursor.close()
         conn.commit()
     else:

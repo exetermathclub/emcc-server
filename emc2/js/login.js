@@ -83,6 +83,7 @@ $(function () {
                         password_el.val("");
                         username_tip.text("Incorrect username or password");
                         password_tip.text("Incorrect username or password");
+                        username_el.focus();
                     }
                 }
             });
@@ -96,7 +97,7 @@ $(function () {
         }
     });
 
-    password_el.keypress(function (e) {
+    password_el.keyup(function (e) {
         if (e && e.keyCode === 13) {
             button_el.click();
         }
@@ -110,14 +111,12 @@ $(function () {
                 "username": username
             },
             success: function () {
-                dialog_el.text("We have sent the password reset information to your email, please check your email.");
+                $("#prompt").text("We have sent the password reset information to the email you registered with, please check your email.");
                 dialog_el.show();
                 cover_el.show();
-                setTimeout(function () {
-                    dialog_el.hide();
-                    cover_el.hide();
-                    $("body").css("cursor", "");
-                }, 2000);
+                $("body").removeClass("loading");
+                submit_el.removeAttr("disabled");
+                submit_el.text("Resend");
             }
         });
     }
@@ -125,6 +124,7 @@ $(function () {
     $("#forgot").click(function () {
         dialog_el.show();
         cover_el.show();
+        dialog_input_el.focus();
     });
 
     cover_el.click(function () {
@@ -135,14 +135,14 @@ $(function () {
     submit_el.click(function () {
         if (dialog_input_el.val() !== "") {
             $(this).attr("disabled", "");
-            $("body").css("cursor", "wait", "important");
+            $("body").addClass("loading");
             forget_submit(dialog_input_el.val());
         } else {
             dialog_input_el.css("background-color", "yellow");
         }
     });
 
-    submit_el.keypress(function (e) {
+    dialog_input_el.keyup(function (e) {
         if (e && e.keyCode === 13) {
             submit_el.click();
         }

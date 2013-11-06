@@ -4,7 +4,7 @@
 
 .field_label {
     display: inline-block;
-    width: 150px;
+    width: 210px;
 }
 
 input.field {
@@ -56,4 +56,17 @@ button {
     height: 100%;
     opacity: 0.5;
     background-color: #888;
+}
+
+#forgot {
+    color: blue;
+    cursor: pointer;
+}
+
+#forgot:hover {
+    text-decoration: underline;
+}
+
+.loading, .loading * {
+    cursor: progress !important;
 }

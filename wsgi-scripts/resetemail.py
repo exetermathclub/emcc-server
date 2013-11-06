@@ -7,6 +7,7 @@ import sys
 import traceback
 from email.mime.text import MIMEText
 import cgi
+import time
 
 def application(environ, start_response):
     # Open our database connection
@@ -23,8 +24,8 @@ def application(environ, start_response):
     username = cgi.parse_qs(environ.get('QUERY_STRING', ''))['username'][0]
 
     # Add the reset key into the database
-    key = base64.b64encode(os.urandom(32)).decode()
-    cursor.execute('UPDATE users SET key = ? WHERE username = ?', (key, username))
+    key = base64.b64encode(os.urandom(36)).decode()
+    cursor.execute('UPDATE users SET key = ?, key_timestamp = ? WHERE username = ?', (key, time.time(), username))
     
     # Get the email
     cursor.execute('SELECT email FROM users WHERE username = ?', [username])

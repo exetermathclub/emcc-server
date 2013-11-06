@@ -44,12 +44,12 @@
             </div>
             <div class="post">
                 <div class="field_wrapper">
-                  <span class="field_label">Username:</span> <input class="field" id="username" autofocus autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="1" type="text"> <span id="username_tip"></span>
+                  <span class="field_label">Username:</span> <input class="field" id="username" autofocus autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="1" type="text">
                 </div>
                 <div class="field_wrapper">
-                    <span class="field_label">Password:<a id="forgot">(Forgot password)</a></span> <input type="password" class="field" id="password" tabindex="2"> <span id="password_tip"></span> 
+                    <span class="field_label">Password:</span> <input type="password" class="field" id="password" tabindex="2"> <a id="forgot">Forgot password</a> 
                 </div>
-                <button class="field" id="button">Login</button>
+                <button class="field" id="button" tabindex="3">Login</button> <span id="login_tip"></span>
             </div>
             <div class="post">
                 *If you made an account in previous years, you will need to register again.

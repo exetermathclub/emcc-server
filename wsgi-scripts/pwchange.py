@@ -4,6 +4,7 @@ import os
 import json
 import hashlib
 import base64
+import time
 
 def application(environ, start_response):
     # Initializing
@@ -25,22 +26,29 @@ def application(environ, start_response):
     key = form['key'].value
 
     # Verify that the user has the key
-    cursor.execute('SELECT key FROM users WHERE username = ?', [username])
-    server_key = cursor.fetchone()[0]
+    cursor.execute('SELECT key, key_timestamp FROM users WHERE username = ?', (username,))
+    (server_key, key_timestamp) = cursor.fetchone()
     if server_key == key:
-        # Generate a random salt
-        salt = base64.b64encode(os.urandom(32))
-        # Hash the password and the salt together
-        hashfun = hashlib.sha512()
-        hashfun.update(salt)
-        hashfun.update(password.encode())
-        hashval = hashfun.hexdigest()
-        cursor.execute("UPDATE users SET salt = ?, hash = ?, key = NULL WHERE username = ?", (salt, hashval, username))
-        cursor.close()
-        conn.commit()
+        if time.time() - key_timestamp < 86400:
+            # Generate a random salt
+            salt = base64.b64encode(os.urandom(36))
+            # Hash the password and the salt together
+            hashfun = hashlib.sha512()
+            hashfun.update(salt)
+            hashfun.update(password.encode())
+            hashval = hashfun.hexdigest()
+            cursor.execute("UPDATE users SET salt = ?, hash = ?, key = NULL WHERE username = ?", (salt, hashval, username))
+            cursor.close()
+            conn.commit()
+        else:
+            output = json.dumps({
+                "success": False,
+                "error": "Outdated key"
+            })
     else:
         output = json.dumps({
-            "success": False
+            "success": False,
+            "error": "Invalid key"
         })
 
     status = '200 OK'

@@ -1,7 +1,6 @@
 $(function () {
     "use strict";
-    var username_tip = $("#username_tip"),
-        password_tip = $("#password_tip"),
+    var tip = $("#login_tip"),
         username_el = $("#username"),
         password_el = $("#password"),
         button_el = $("#button"),
@@ -9,23 +8,6 @@ $(function () {
         cover_el = $("#cover"),
         dialog_input_el = $("#dialog_input"),
         submit_el = $("#dialog_submit");
-
-    function verify() {
-        var ret = true;
-        if (username_el.val().length === 0) {
-            username_tip.text("This field is required");
-            ret = false;
-        } else {
-            username_tip.text("");
-        }
-        if (password_el.val().length === 0) {
-            password_tip.text("This field is required");
-            ret = false;
-        } else {
-            password_tip.text("");
-        }
-        return ret;
-    }
 
     // Login with given username-password pair
     function login(username, password) {
@@ -79,10 +61,7 @@ $(function () {
                     if (data.correct) {
                         window.location.href = "dashboard.shtml";
                     } else {
-                        username_el.val("");
-                        password_el.val("");
-                        username_tip.text("Incorrect username or password");
-                        password_tip.text("Incorrect username or password");
+                        tip.text("Incorrect username or password.");
                         username_el.focus();
                     }
                 }
@@ -92,12 +71,10 @@ $(function () {
 
     // Login button click handler
     button_el.click(function () {
-        if (verify()) {
-            login(username_el.val(), password_el.val());
-        }
+        login(username_el.val(), password_el.val());
     });
 
-    password_el.keyup(function (e) {
+    password_el.keydown(function (e) {
         if (e && e.keyCode === 13) {
             button_el.click();
         }

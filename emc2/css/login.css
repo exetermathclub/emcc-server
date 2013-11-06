@@ -4,7 +4,7 @@
 
 .field_label {
     display: inline-block;
-    width: 210px;
+    width: 100px;
 }
 
 input.field {
@@ -61,6 +61,7 @@ button {
 #forgot {
     color: blue;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 #forgot:hover {
@@ -69,4 +70,9 @@ button {
 
 .loading, .loading * {
     cursor: progress !important;
+}
+
+#login_tip {
+    margin-left: 10px;
+    color: #F00;
 }

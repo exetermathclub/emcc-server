@@ -4,3 +4,4 @@ PASSWORD
 auth.db
 auth_srp.db
 *.pyc
+*.bak

@@ -89,8 +89,6 @@ $(function () {
             },
             success: function () {
                 $("#prompt").text("We have sent the password reset information to the email you registered with, please check your email.");
-                dialog_el.show();
-                cover_el.show();
                 $("body").removeClass("loading");
                 submit_el.removeAttr("disabled");
                 submit_el.text("Resend");

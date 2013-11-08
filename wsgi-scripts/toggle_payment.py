@@ -20,7 +20,7 @@ def application(environ, start_response):
     )
     
     # Get this user's session key
-    c.execute("SELECT * FROM sesskeys WHERE id=?", (int(form['id'].value),))
+    c.execute("SELECT sesskey FROM sesskeys WHERE id=?", (int(form['id'].value),))
     key = auth.dehexify(c.fetchone()[1])
     
     # Close the database connection

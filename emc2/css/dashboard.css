@@ -16,7 +16,8 @@ input.field {
 }
 
 a.field {
-    color: blue;
+    color: #00F;
+    color: -webkit-link;
 }
 
 .team {

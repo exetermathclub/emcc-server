@@ -10,7 +10,7 @@
 input.field {
     font-family: georgia, times, serif;
     width: 200px;
-    padding: 2px 2px 2px 2px;
+    padding: 2px;
     border: 1px solid black;
 }
 
@@ -60,9 +60,10 @@ button {
 }
 
 #forgot {
-    color: blue;
+    color: #00F;
+    color: -webkit-link;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 #forgot:hover {

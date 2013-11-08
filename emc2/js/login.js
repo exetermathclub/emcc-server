@@ -13,6 +13,7 @@ $(function () {
     function login(username, password) {
         if (username === "admin") {
             //If we're logging in as an admin, we go through the SRP protocol
+            $("body").addClass("loading");
             var rand = generateA();
             $.ajax({
                 url: "../wsgi-scripts/admin_auth.py",
@@ -48,6 +49,7 @@ $(function () {
                     });
                 }
             });
+            $("body").removeClass("loading");
         } else {
             $.ajax({
                 url: "../wsgi-scripts/authenticate.py",
@@ -74,7 +76,7 @@ $(function () {
         login(username_el.val(), password_el.val());
     });
 
-    password_el.keydown(function (e) {
+    password_el.keyup(function (e) {
         if (e && e.keyCode === 13) {
             button_el.click();
         }

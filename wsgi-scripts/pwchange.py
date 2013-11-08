@@ -37,7 +37,7 @@ def application(environ, start_response):
             hashfun.update(salt)
             hashfun.update(password.encode())
             hashval = hashfun.hexdigest()
-            cursor.execute("UPDATE users SET salt = ?, hash = ?, key = NULL WHERE username = ?", (salt, hashval, username))
+            cursor.execute("UPDATE users SET salt = ?, hash = ?, key = NULL, key_timestamp = NULL WHERE username = ?", (salt, hashval, username))
             cursor.close()
             conn.commit()
         else:

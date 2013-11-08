@@ -15,6 +15,9 @@ SetEnvIfNoCase Request_URI \
 \.(?:gif|jpe?g|png)$ no-gzip dont-vary
 
 ExpiresActive On
+ExpiresDefault "access plus 1 month"
+
+AddDefaultCharset utf-8
 
 #RewriteEngine On
 #RewriteCond %{SERVER_PORT} 80

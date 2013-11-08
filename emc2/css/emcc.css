@@ -24,7 +24,7 @@ a {
     margin-left: 10px;
     margin-top: 0;
     margin-bottom: 0;
-    margin-right: 8em;
+    margin-right: 150px;
     background-color: #990000;
 }
 
@@ -51,8 +51,6 @@ a {
     position: absolute;
     right: 0px;
     top: 0px;
-    height: 8em;
-    width: 8em;
 }
 
 #navbar {

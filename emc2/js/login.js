@@ -7,13 +7,14 @@ $(function () {
         dialog_el = $("#dialog"),
         cover_el = $("#cover"),
         dialog_input_el = $("#dialog_input"),
-        submit_el = $("#dialog_submit");
+        submit_el = $("#dialog_submit"),
+        body_el = $("body");
 
     // Login with given username-password pair
     function login(username, password) {
         if (username === "admin") {
             //If we're logging in as an admin, we go through the SRP protocol
-            $("body").addClass("loading");
+            body_el.addClass("loading");
             var rand = generateA();
             $.ajax({
                 url: "../wsgi-scripts/admin_auth.py",
@@ -49,7 +50,7 @@ $(function () {
                     });
                 }
             });
-            $("body").removeClass("loading");
+            body_el.removeClass("loading");
         } else {
             $.ajax({
                 url: "../wsgi-scripts/authenticate.py",
@@ -91,7 +92,7 @@ $(function () {
             },
             success: function () {
                 $("#prompt").text("We have sent the password reset information to the email you registered with, please check your email.");
-                $("body").removeClass("loading");
+                body_el.removeClass("loading");
                 submit_el.removeAttr("disabled");
                 submit_el.text("Resend");
             }
@@ -112,7 +113,7 @@ $(function () {
     submit_el.click(function () {
         if (dialog_input_el.val() !== "") {
             $(this).attr("disabled", "");
-            $("body").addClass("loading");
+            body_el.addClass("loading");
             forget_submit(dialog_input_el.val());
         } else {
             dialog_input_el.css("background-color", "yellow");

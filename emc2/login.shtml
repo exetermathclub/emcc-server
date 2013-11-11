@@ -53,7 +53,7 @@
         </div>
 
         <div id="dialog">
-            <div class="field_wrapper"><div id="prompt">Please enter your username:</div><input class="field" id="dialog_input"></div>
+            <div class="field_wrapper"><div id="prompt">Please enter your username:</div><input class="field" id="dialog_input" autocorrect="off" autocapitalize="off" spellcheck="false"></div>
             <div class="field_wrapper"><button class="field" id="dialog_submit">Submit</button></div>
         </div>
         <div id="cover"></div>

@@ -112,6 +112,10 @@ $(function () {
                 body_el.removeClass("loading");
                 submit_el.removeAttr("disabled");
                 submit_el.text("Resend");
+            },
+            error: function () {
+                body_el.removeClass("loading");
+                dialog_input_el.css("background-color", "yellow");
             }
         });
     }
@@ -138,6 +142,7 @@ $(function () {
     });
 
     dialog_input_el.keyup(function (e) {
+        submit_el.removeAttr("disabled");
         if (e && e.keyCode === 13) {
             submit_el.click();
         }

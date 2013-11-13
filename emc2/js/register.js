@@ -17,14 +17,13 @@ $(function () {
     function verify() {
         var i, ret = true;
         for (i = 0; i < 6; i += 1) {
-            if (i === 4) {
-                if (fields[4].val() !== fields[3].val()) {
-                    tips[4].text("Passwords do not match.");
-                    ret = false;
-                } else {
-                    tips[4].text("");
-                }
-            } else if (fields[i].val().length === 0 && i !== 5) {
+            if (i === 4 && fields[4].val() !== fields[3].val()) {
+                tips[4].text("Passwords do not match.");
+                ret = false;
+            } else if (i === 1 && fields[1].val().indexOf("@") !== -1) {
+                tips[1].text("Please enter a valid email address.");
+                ret = false;
+            } else if (i !== 5 && fields[i].val().length === 0) {
                 tips[i].text("This field is required.");
                 ret = false;
             } else {

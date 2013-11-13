@@ -19,7 +19,7 @@ ExpiresDefault "access plus 1 month"
 
 AddDefaultCharset utf-8
 
-#RewriteEngine On
-#RewriteCond %{SERVER_PORT} 80
-#RewriteBase /~mathclub/
-#RewriteRule ^(.*)$ https://%{SERVER_NAME}/~mathclub/$1 [PT]
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteBase /~mathclub/
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [QSA,R,L]

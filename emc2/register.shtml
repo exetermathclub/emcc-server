@@ -39,22 +39,22 @@
             </div>
             <div class="post">
                 <div class="field_wrapper">
-                    <span class="field_label">Username:</span> <input class="field" id="username" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus> <span id="username_tip"></span>
+                    <label class="field_label" for="username">Username:</label> <input class="field" id="username" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus> <span id="username_tip"></span>
                 </div>
                 <div class="field_wrapper">
-                    <span class="field_label">Email:</span> <input class="field" id="email" autocorrect="off" autocapitalize="off" spellcheck="false"> <span id="email_tip"></span>
+                    <label class="field_label" for="email">Email:</label> <input class="field" id="email" autocorrect="off" autocapitalize="off" spellcheck="false"> <span id="email_tip"></span>
                 </div>
                 <div class="field_wrapper">
-                    <span class="field_label">Real Name:</span> <input class="field" id="realname" autocorrect="off" autocapitalize="off" spellcheck="false"> <span id="realname_tip"></span>
+                    <label class="field_label" for="realname">Real Name:</label> <input class="field" id="realname" autocorrect="off" autocapitalize="off" spellcheck="false"> <span id="realname_tip"></span>
                 </div>
                 <div class="field_wrapper">
-                  <span class="field_label">Password:</span> <input type="password" class="field" id="password"> <span id="password_tip"></span>
+                  <label class="field_label" for="password">Password:</label> <input type="password" class="field" id="password"> <span id="password_tip"></span>
                 </div>
                 <div class="field_wrapper">
-                  <span class="field_label">Confirm:</span> <input type="password" class="field" id="confirm"> <span id="confirm_tip"></span>
+                  <label class="field_label" for="confirm">Confirm:</label> <input type="password" class="field" id="confirm"> <span id="confirm_tip"></span>
                 </div>
                 <div class="field_wrapper">
-                    <span class="field_label">Organization Name:</span> <input class="field" id="team" autocorrect="off" spellcheck="false"> <span id="team_tip"></span>
+                    <label class="field_label" for="team">Organization Name:</label> <input class="field" id="team" autocorrect="off" spellcheck="false"> <span id="team_tip"></span>
                 </div>
                 <button class="field" id="button">Register</button>
             </div>

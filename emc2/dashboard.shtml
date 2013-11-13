@@ -52,7 +52,7 @@
                         <div class="field_wrapper"><span class="field_label">Individual:</span><input type="checkbox" id="individual_checkbox"/></div>
                         <div class="field_wrapper"><span class="field_label">Payment status: </span><span class="field" id="paid">Unpaid</span></div>
                         <div class="field_wrapper"><span class="field_label">Partipation: </span><select class="field" id="participation">
-                            <option value="On-Site">On Site</option>
+                            <option value="On-Site" selected>On Site</option>
                             <option value="Online">Online</option>
                         </select>
                         </div>

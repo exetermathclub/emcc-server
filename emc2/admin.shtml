@@ -20,9 +20,6 @@
                 margin: 0;
                 padding: 10px;
             }
-            td.table_header {
-                font-weight: bold;
-            }
         </style>
         
         <!-- Google Analytics -->
@@ -51,12 +48,12 @@
             </div>
             <table id="team_table">
                 <tr>
-                    <td class="table_header">ID</td>
-                    <td class="table_header">Coach</td>
-                    <td class="table_header">Team Name</td>
-                    <td class="table_header">Team Members</td>
-                    <td class="table_header">Participation Type</td>
-                    <td class="table_header">Payment</td>
+                    <th>ID</th>
+                    <th>Coach</th>
+                    <th>Team Name</th>
+                    <th>Team Members</th>
+                    <th>Participation Type</th>
+                    <th>Payment</th>
                 </tr>
             </table>
         </div>

@@ -1,0 +1,146 @@
+body {
+    font-family: georgia, times, serif;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.h1 {
+    font-size: 45px;
+}
+
+.selflink {
+    color: black;
+}
+
+#name {
+    padding-left: 5px;
+    border-left: 10px solid #990000;
+}
+
+#top_divider {
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 150px;
+    background-color: #990000;
+}
+
+#bottom_divider {
+    margin-left: 200px;
+    margin-right: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #990000;
+}
+
+#abbr {
+    width: 200px;
+    color: #990000;
+    font-size: 20px;
+    padding-left: 5px;
+    border-left: 10px solid #990000;
+    border-bottom: 2px solid #CC9999;
+    padding-top: 5px;
+}
+
+#emcc_logo {
+    overflow: auto;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+#navbar {
+    float: left;
+    padding-left: 15px;
+    width: 200px;
+}
+
+.navbar_section_header {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.navbar_section {
+    padding-left: 15px;
+}
+
+#navbar a {
+    display: block;
+    color: black;
+    cursor: pointer;
+}
+
+#information {
+    border-top: 1px solid #990000;
+    border-bottom: 1px solid #CC9999;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+#online {
+    border-bottom: 1px solid #990000;
+    padding-bottom: 10px;
+}
+
+#coaches {
+    border-bottom: 1px solid #CC9999;
+    padding-bottom: 10px;
+}
+
+#archive {
+    border-bottom: 1px solid #990000;
+    padding-bottom: 10px;
+}
+
+#archive_link {
+    cursor: pointer;
+}
+
+#archive_section {
+    display: none;
+}
+
+.post_title {
+    font-size: 30px;
+    border-bottom: 2px solid #990000;
+}
+
+.post {
+    padding-top: 5px;
+}
+
+#content {
+    margin-left: 200px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#footer {
+    text-align: right;
+    margin-left: 35px;
+}
+
+#sponsor {
+    margin-top: 50px;
+    border-right: 10px solid #990000;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+#footer_address {
+    border-right: 10px solid #990000;
+    padding-right: 10px;
+}
+
+.archive_indent {
+    padding-left: 10px;
+}
+
+.fb-like {
+    margin-top: 5px;
+}

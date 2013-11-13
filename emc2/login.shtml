@@ -39,10 +39,10 @@
             </div>
             <div class="post">
                 <div class="field_wrapper">
-                  <span class="field_label">Username:</span> <input class="field" id="username" autofocus autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="1" type="text">
+                  <label class="field_label" for="username">Username:</label> <input class="field" id="username" autofocus autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="1" type="text" label="username">
                 </div>
                 <div class="field_wrapper">
-                    <span class="field_label">Password:</span> <input type="password" class="field" id="password" tabindex="2"> <a id="forgot">Forgot password</a> 
+                    <label class="field_label" for="password">Password:</label> <input type="password" class="field" id="password" tabindex="2"> <a id="forgot">Forgot password</a> 
                 </div>
                 <button class="field" id="button" tabindex="3">Login</button> <span id="login_tip"></span>
             </div>

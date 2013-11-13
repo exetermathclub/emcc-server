@@ -146,7 +146,7 @@ def application(environ, start_response):
     status = '200 OK'
     response_headers = [('Content-type', 'application/json'),
                         ('Content-Length', str(len(output))),
-                        ('Cache-Control', 'max-age=0')]
+                        ('Cache-Control', 'no-cache')]
     start_response(status, response_headers)
 
     # Write everything to the client

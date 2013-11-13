@@ -45,6 +45,7 @@ def application(environ, start_response):
     # Actually write everything.
     status = '200 OK'
     response_headers = [('Content-type', 'application/json'),
-                        ('Content-Length', str(len(output)))]
+                        ('Content-Length', str(len(output))),
+                        ('Cache-Control', 'no-cache')]
     start_response(status, response_headers)
     return [output]

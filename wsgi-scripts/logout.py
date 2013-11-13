@@ -57,7 +57,7 @@ def application(environ, start_response):
     response_headers = [('Content-type', 'application/json'),
                         ('Content-Length', str(len(output))),
                         ('Set-Cookie', 'EMCC=null; path=/; expires=Thu, Jan 01 1970 00:00:00 UTC;'),
-                        ('Cache-Control', 'max-age=0')]
+                        ('Cache-Control', 'no-cache')]
     start_response(status, response_headers)
 
     # Write everything to the client

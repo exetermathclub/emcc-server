@@ -73,7 +73,7 @@
                 }
             });
         </script>
-        <script type="text/javascript" src="js/register.js"></script>
+        <script type="text/javascript" src="js/register.min.js"></script>
         <script type="text/javascript" src="js/sha512.js"></script>
     </body>
 </html>

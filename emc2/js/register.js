@@ -20,7 +20,7 @@ $(function () {
             if (i === 4 && fields[4].val() !== fields[3].val()) {
                 tips[4].text("Passwords do not match.");
                 ret = false;
-            } else if (i === 1 && fields[1].val().indexOf("@") !== -1) {
+            } else if (i === 1 && fields[1].val().indexOf("@") === -1) {
                 tips[1].text("Please enter a valid email address.");
                 ret = false;
             } else if (i !== 5 && fields[i].val().length === 0) {

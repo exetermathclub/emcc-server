@@ -1,4 +1,5 @@
 PASSWORD
+build.sh
 *.swp
 *.swo
 auth.db

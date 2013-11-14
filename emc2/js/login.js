@@ -141,8 +141,11 @@ $(function () {
         }
     });
 
-    dialog_input_el.keyup(function (e) {
+    dialog_input_el.change(function (e) {
         submit_el.removeAttr("disabled");
+    });
+
+    dialog_input_el.keyup(function (e) {
         if (e && e.keyCode === 13) {
             submit_el.click();
         }

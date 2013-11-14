@@ -141,8 +141,9 @@ $(function () {
         }
     });
 
-    dialog_input_el.change(function (e) {
+    dialog_input_el.keydown(function () {
         submit_el.removeAttr("disabled");
+        dialog_input_el.css("background-color", "");
     });
 
     dialog_input_el.keyup(function (e) {

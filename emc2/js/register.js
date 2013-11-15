@@ -35,6 +35,7 @@ $(function () {
 
     // Register a user with the given data, then redirect to login
     function register(username, email, realname, password, orgname) {
+        ga('send', 'event', 'button', 'register');
         $.ajax({
             url: "../wsgi-scripts/register.py",
             method: "POST",

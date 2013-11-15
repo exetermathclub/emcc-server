@@ -155,6 +155,7 @@ $(function () {
 
     function register() {
         var ret;
+        ga('send', 'event', 'button', 'team');
         $.ajax({
             url: "../wsgi-scripts/teams.py",
             method: "POST",

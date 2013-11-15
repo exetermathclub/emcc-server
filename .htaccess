@@ -22,4 +22,4 @@ AddDefaultCharset utf-8
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteBase /~mathclub/
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [QSA]
+RewriteRule ^ https://csserver.exeter.edu%{REQUEST_URI} [QSA]

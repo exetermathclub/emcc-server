@@ -8,6 +8,8 @@ import imp
 auth = imp.load_source("auth", "/home/mathclub/public_html/wsgi-scripts/auth.py")
 from http import cookies
 
+# TODO CHANGE THIS TO USING MEMCAHED AS IN THE memcahed.py example
+
 def application(environ, start_response):
     # Open up the authentication database
     conn = auth.initDB("/home/mathclub/public_html/wsgi-scripts/auth_srp.db")

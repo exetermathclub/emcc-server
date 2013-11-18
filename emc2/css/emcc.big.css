@@ -26,6 +26,7 @@ a {
     margin-bottom: 0;
     margin-right: 150px;
     background-color: #990000;
+    height: 2px;
 }
 
 #bottom_divider {
@@ -34,6 +35,7 @@ a {
     margin-top: 0;
     margin-bottom: 0;
     background-color: #990000;
+    height: 2px;
 }
 
 #abbr {

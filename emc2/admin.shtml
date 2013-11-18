@@ -71,5 +71,16 @@
         <script type="text/javascript" src="js/jslib/BigInt.js"></script>
         <script type="text/javascript" src="js/jslib/auth.min.js"></script>
         <script type="text/javascript" src="js/admin.js"></script>
+        <script type="text/javascript">
+            $("#archive_link").click(function () {
+                "use strict";
+                var secobj = $("#archive_section");
+                if (secobj.css("display") !== "block") {
+                    secobj.show();
+                } else {
+                    secobj.hide();
+                }
+            });
+        </script>
     </body>
 </html>

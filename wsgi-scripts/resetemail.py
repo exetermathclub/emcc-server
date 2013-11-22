@@ -4,7 +4,6 @@ import os
 import base64
 import smtplib
 import sys
-import traceback
 from email.mime.text import MIMEText
 import cgi
 import time
@@ -51,14 +50,13 @@ def application(environ, start_response):
     msg['From'] = 'emcc2014@gmail.com'
     msg['To'] = email
 
-    # Log in to gmail's smtp with the emcc2014 credentials
-    server = smtplib.SMTP('smtp.gmail.com:587')
-    server.starttls()
-    server.login('emcc2014', open('/home/mathclub/public_html/wsgi-scripts/PASSWORD', 'r').read()[:-1])
+    # Log in to amazon's smtp with the emcc2014 credentials
+    server = smtplib.SMTP_SSL('email-smtp.us-east-1.amazonaws.com:465')
+    server.login('AKIAIUYI6RRI7ZIIRVIQ', open('/home/mathclub/public_html/wsgi-scripts/PASSWORD', 'r').read()[:-1])
     
     # Send the email
     try:
-        server.sendmail('donotreply@emcc.exeter.edu', email, msg.as_string())
+        server.sendmail('emcc2014@gmail.com', email, msg.as_string())
     except smtplib.SMTPRecipientsRefused:
         # If we failed because the target email is misformatted, say so
         output = json.dumps({

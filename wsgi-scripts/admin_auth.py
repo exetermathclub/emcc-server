@@ -8,12 +8,14 @@ import imp
 auth = imp.load_source("auth", "/home/mathclub/public_html/wsgi-scripts/auth.py")
 from http import cookies
 
-# TODO CHANGE THIS TO USING MEMCAHED AS IN THE memcahed.py example
+# TODO change this to using memcached as in memcahedtest.py example
 
 def application(environ, start_response):
     # Open up the authentication database
     conn = auth.initDB("/home/mathclub/public_html/wsgi-scripts/auth_srp.db")
     c = conn.cursor()
+    c.execute("PRAGMA synchronous=OFF")
+    c.execute("PRAGMA temp_store=MEMORY")
     output = ""
     
     # Make sure that we have a working sesskeys table

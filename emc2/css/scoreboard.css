@@ -1,0 +1,73 @@
+div#body {
+  font-family: sans-serif;
+}
+div.team {
+  border-bottom: 1px solid #888;
+  padding: 5px;
+}
+
+div.team_name {
+  font-size: 30px;
+}
+
+div.team_score {
+  font-size: 20px;
+}
+
+div.team_bar {
+  height: 10px;
+}
+
+div.team_progressbar {
+  display: inline-block;
+  background-color: #00F;
+  height: 10px;
+}
+
+div.team_scorebar {
+  background-color: #F00;
+  display: inline-block;
+  height: 10px;
+}
+
+div#timer {
+  position: fixed;
+  font-size: 40px;
+  font-family: sans-serif;
+  text-align: center;
+  top:0;
+  right:0;
+  border-bottom: 1px solid #888;
+  border-left: 1px solid #888;
+  height: 100px;
+  line-height: 100px;
+  width: 300px;
+  background-color: rgba(256, 256, 256, 0.5);
+}
+
+div#search_wrapper {
+  position: fixed;
+  border-bottom: 1px solid #888;
+  border-right: 1px solid #888;
+  padding: 30px;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background-color: rgba(256, 256, 256, 0.5);
+}
+
+input#search {
+  border: 1px solid #000;
+  height: 30px;
+  width: 200px;
+  outline: none;
+  background-color: rgba(256, 256, 256, 0.5);
+}
+
+input#search:focus {
+  box-shadow: inset 0 0 5px #000;
+}
+
+div.team.highlighted {
+  background-color: #88F;
+}

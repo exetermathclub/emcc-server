@@ -60,7 +60,7 @@
                     <input class="field" type="text" id="teamid">
                     <span id="teamname"></span>
                 </div>
-                <div class="field_wrapper">
+                <div class="field_wrapper" id="indiv_wrapper">
                     <label class="field_label" for="individ">Individual ID:</label>
                     <input class="field" type="text" id="individ">
                     <span id="indivname"></span>

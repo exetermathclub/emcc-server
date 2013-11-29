@@ -24,10 +24,10 @@ def application(environ, start_response):
     conn.close()
 
     # Open up the teams database
-    conn = sqlite3.connect('/home/mathclub/public_html/wsgi-scripts/teams.db')
+    conn = sqlite3.connect('/home/mathclub/public_html/wsgi-scripts/scores.db')
     c = conn.cursor()
 
-    c.execute("SELECT name FROM teams WHERE id = ?", (auth.decrypt(key, form['team_id'].value),))
+    c.execute("SELECT team_name FROM team WHERE team_id = ?", (auth.decrypt(key, form['team_id'].value),))
     row = c.fetchone()
 
     if row is not None:

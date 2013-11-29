@@ -27,16 +27,15 @@ def application(environ, start_response):
 
     # Open up the teams database
     if len(individ) > 1:
-        teamid = int(str(individ[:-1]))
-        conn = sqlite3.connect('/home/mathclub/public_html/wsgi-scripts/teams.db')
+        conn = sqlite3.connect('/home/mathclub/public_html/wsgi-scripts/scores.db')
         c = conn.cursor()
         
-        c.execute("SELECT members FROM teams WHERE id = ?", (teamid,))
+        c.execute("SELECT indiv_name FROM speed WHERE indiv_id = ?", (individ,))
         row = c.fetchone()
 
         if row is not None:
-            # Get all the team info
-            indiv_name = json.loads(row[0])[int(str(individ)[-1])-1]
+            # Get the individual's name
+            indiv_name = row[0]
             
             # Write it all
             output = auth.encrypt(key, json.dumps(indiv_name))

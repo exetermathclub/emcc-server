@@ -1,64 +1,35 @@
-{
-  "teams": [
-      {
-        "name": "test_team_1",
-        "score": 64,
-        "progress": 100
-      },
-      {
-        "name": "test_team_2",
-        "score": 15,
-        "progress": 100
-      },
-      {
-        "name": "test_team_3",
-        "score": 150,
-        "progress": 200
-      },
-      {
-        "name": "test_team_4",
-        "score": 162,
-        "progress": 162
-      },
-      {
-        "name": "test_team_5",
-        "score": 164,
-        "progress": 170
-      },
-      {
-        "name": "test_team_6",
-        "score": 395,
-        "progress": 400
-      },
-      {
-        "name": "test_team_7",
-        "score": 15,
-        "progress": 30
-      },
-      {
-        "name": "test_team_8",
-        "score": 134,
-        "progress": 150
-      },
-      {
-        "name": "test_team_9",
-        "score": 120,
-        "progress": 200
-      },
-      {
-        "name": "test_team_10",
-        "score": 190,
-        "progress": 200
-      },
-      {
-        "name": "test_team_11",
-        "score": 267,
-        "progress": 300
-      },
-      {
-        "name": "test_team_12",
-        "score": 2,
-        "progress": 400
-      }
-  ]
-}
+import sqlite3
+import json
+
+def application(environ, start_response):
+    output = ""
+    raw_output = []
+
+    # Open up the teams database
+    conn = sqlite3.connect('/home/mathclub/public_html/wsgi-scripts/scores.db')
+    c = conn.cursor()
+
+    c.execute("SELECT team_name, progress, score FROM guts")
+    rows = c.fetchall()
+
+    for i in rows:
+        raw_output.append({
+            "name": i[0],
+            "progress": i[1],
+            "score": i[2]
+        })
+
+    # Close the database connection
+    conn.close()
+
+    output = json.dumps({
+        "teams": raw_output
+    })
+
+    # Actually write everything.
+    status = '200 OK'
+    response_headers = [('Content-type', 'application/json'),
+                        ('Content-Length', str(len(output))),
+                        ('Cache-Control', 'no-cache')]
+    start_response(status, response_headers)
+    return [output]

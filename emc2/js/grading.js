@@ -19,10 +19,12 @@ $(function () {
         rounds_el = $("div.round"),
         checkboxes_el = $("input[type=\"checkbox\"]"),
         dialog_el = $("#dialog"),
+        indivwrapper_el = $("#indiv_wrapper"),
         srp_id,
         srp_key,
         guts_values = [6, 8, 10, 12, 14, 16, 16, 18];
 
+    // Login with the password, copied over from login.js
     function login(password) {
         var rand = generateA();
         $.ajax({
@@ -68,6 +70,7 @@ $(function () {
         });
     }
 
+    // We validate our id and key with the server if they seem to exist
     if (localStorage.SRP_ID && localStorage.SRP_SESS_KEY) {
         $.ajax({
             url: "../wsgi-scripts/grading_validate.py",
@@ -101,6 +104,7 @@ $(function () {
         });
     }
 
+    // As the user types the id, we ask the server for the corresponding team name and the user will verify it.
     teamid_el.keyup(function () {
         $.ajax({
             url: "../wsgi-scripts/team_name.py",
@@ -110,11 +114,15 @@ $(function () {
                 team_id: JSON.stringify(encrypt(srp_key, teamid_el.val()))
             },
             success: function (data) {
-                $("#teamname").text(JSON.parse(decrypt(srp_key, data)));
+                teamname_el.text(JSON.parse(decrypt(srp_key, data)));
+            },
+            error: function () {
+                teamname_el.text("");
             }
         });
     });
 
+    // See above.
     individ_el.keyup(function () {
         $.ajax({
             url: "../wsgi-scripts/indiv_name.py",
@@ -124,11 +132,15 @@ $(function () {
                 indiv_id: JSON.stringify(encrypt(srp_key, individ_el.val()))
             },
             success: function (data) {
-                $("#indivname").text(JSON.parse(decrypt(srp_key, data)));
+                indivname_el.text(JSON.parse(decrypt(srp_key, data)));
+            },
+            error: function () {
+                indivname_el.text("");
             }
         });
     });
 
+    // We show the checkboxes for the selected round.
     round_el.change(function () {
         switch (round_el.val()) {
         case "speed":
@@ -136,24 +148,28 @@ $(function () {
             accuracy_el.hide();
             team_el.hide();
             guts_el.hide();
+            indivwrapper_el.show();
             break;
         case "accuracy":
             accuracy_el.show();
             speed_el.hide();
             team_el.hide();
             guts_el.hide();
+            indivwrapper_el.show();
             break;
         case "team":
             team_el.show();
             speed_el.hide();
             accuracy_el.hide();
             guts_el.hide();
+            indivwrapper_el.hide();
             break;
         default:
             guts_el.show();
             speed_el.hide();
             accuracy_el.hide();
             team_el.hide();
+            indivwrapper_el.hide();
         }
     });
 
@@ -162,6 +178,7 @@ $(function () {
         $("#round" + gutsround_el.val()).show();
     });
 
+    // Serialize all the scores into JSON format.
     function serializeScores() {
         var scores = [], score = 0, guts_round;
         switch (round_el.val()) {
@@ -198,6 +215,7 @@ $(function () {
         };
     }
 
+    // Clear the checkboxes and the individual name
     function clearAllInputs() {
         individ_el.val("");
         indivname_el.text("");
@@ -205,15 +223,16 @@ $(function () {
         individ_el.focus();
     }
 
+    // We submit our scores.
     submit_el.click(function () {
         var serializedScores = serializeScores(), round = round_el.val(), guts_round = gutsround_el.val();
-        if (teamid_el.val() === "") {
-            teamname_el.text("Enter a team ID.");
+        if (teamname_el.val() === "") {
+            teamname_el.text("Enter a valid team ID.");
             teamid_el.focus();
             return false;
         }
-        if (round !== "team" && round !== "guts" && individ_el.val() === "") {
-            indivname_el.text("Enter an individual ID.");
+        if (round !== "team" && round !== "guts" && individ_name.val() === "") {
+            indivname_el.text("Enter a valid individual ID.");
             individ_el.focus();
             return false;
         }

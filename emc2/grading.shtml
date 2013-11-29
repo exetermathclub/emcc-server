@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <title>Contest Grading</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/emcc.css">
+        <link rel="stylesheet" type="text/css" href="css/grading.css">
+        
+        <!-- Google Analytics -->
+        <script type="text/javascript">
+             (function(i, s, o, g, r, a, m) {
+                 i['GoogleAnalyticsObject'] = r;
+                 i[r] = i[r] ||
+                 function() {
+                     (i[r].q = i[r].q || []).push(arguments)
+                 }, i[r].l = 1 * new Date();
+                 a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                 a.async = 1;
+                 a.src = g;
+                 m.parentNode.insertBefore(a, m)
+             })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+             ga('create', 'UA-38541594-3', 'exeter.edu');
+             ga('require', 'linkid', 'linkid.js');
+             ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+<!--#include virtual="bars.html" -->   
+        <div id="content">
+            <div class="post_title">Grading</div>
+            <div class="post">
+                <div class="field_wrapper">
+                    <label class="field_label" for="password">Password:</label>
+                    <input class="field" type="password" id="password">
+                    <button class="field" id="login">Login</button>
+                    <span id="loggedin">Logged in</span>
+                </div>
+                <div class="field_wrapper">
+                    <label class="field_label" for="round">Round:</label>
+                    <select class="field" id="round">
+                        <option value="speed">Speed</option>
+                        <option value="accuracy">Accuracy</option>
+                        <option value="team">Team</option>
+                        <option value="guts">Guts</option>
+                    </select>
+                </div>
+                <div class="field_wrapper">
+                    <label class="field_label" for="teamid">Team ID:</label>
+                    <input class="field" type="text" id="teamid">
+                    <span id="teamname"></span>
+                </div>
+                <div class="field_wrapper">
+                    <label class="field_label" for="individ">Individual ID:</label>
+                    <input class="field" type="text" id="individ">
+                    <span id="indivname"></span>
+                </div>
+                <div id="speed">
+                    <div class="field_wrapper">
+                        <label class="problem">1</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">2</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">3</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">4</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">5</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">6</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">7</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">8</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">9</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">10</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">11</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">12</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">13</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">14</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">15</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">16</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">17</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">18</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">19</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">20</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">21</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">22</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">23</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">24</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">25</label>
+                        <input type="checkbox">
+                    </div>
+                </div>
+                <div id="accuracy">
+                    <div class="field_wrapper">
+                        <label class="problem">1</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">2</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">3</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">4</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">5</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">6</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">7</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">8</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">9</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">10</label>
+                        <input type="checkbox">
+                    </div>
+                </div>
+                <div id="team">
+                    <div class="field_wrapper">
+                        <label class="problem">1</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">2</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">3</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">4</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">5</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">6</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">7</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">8</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">9</label>
+                        <input type="checkbox">
+                    </div>
+                    <div class="field_wrapper">
+                        <label class="problem">10</label>
+                        <input type="checkbox">
+                    </div>
+                </div>
+                <div id="guts">
+                    <div class="field_wrapper">
+                        <label class="field_label">Round:</label>
+                        <select id="gutsround">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                    <div id="round1" class="round">
+                        <div class="field_wrapper">
+                            <label class="problem">1</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">2</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">3</label>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+                    <div id="round2" class="round">
+                        <div class="field_wrapper">
+                            <label class="problem">4</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">5</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">6</label>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+                    <div id="round3" class="round">
+                        <div class="field_wrapper">
+                            <label class="problem">7</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">8</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">9</label>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+                    <div id="round4" class="round">
+                        <div class="field_wrapper">
+                            <label class="problem">10</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">11</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">12</label>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+                    <div id="round5" class="round">
+                        <div class="field_wrapper">
+                            <label class="problem">13</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">14</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">15</label>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+                    <div id="round6" class="round">
+                        <div class="field_wrapper">
+                            <label class="problem">16</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">17</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">18</label>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+                    <div id="round7" class="round">
+                        <div class="field_wrapper">
+                            <label class="problem">19</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">20</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">21</label>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+                    <div id="round8" class="round">
+                        <div class="field_wrapper">
+                            <label class="problem">22</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">23</label>
+                            <input type="checkbox">
+                        </div>
+                        <div class="field_wrapper">
+                            <label class="problem">24</label>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+                </div>
+                <button class="field" id="submit" disabled>Submit</button>
+            </div>
+        </div>
+        <div id="dialog">Success.</div>
+<!--#include virtual="footer.html" -->
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script type="text/javascript" src="js/sha512.js"></script>
+        <script type="text/javascript" src="js/jslib/rollups/aes.js"></script>
+        <script type="text/javascript" src="js/jslib/rollups/sha256.js"></script>
+        <script type="text/javascript" src="js/jslib/BigInt.js"></script>
+        <script type="text/javascript" src="js/jslib/auth.min.js"></script>
+        <script type="text/javascript" src="js/grading.js"></script>
+        <script type="text/javascript">
+            $("#archive_link").click(function () {
+                "use strict";
+                var secobj = $("#archive_section");
+                if (secobj.css("display") !== "block") {
+                    secobj.show();
+                } else {
+                    secobj.hide();
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -224,7 +224,7 @@ $(function () {
         delete_team(current_viewed_team);
         delete teams[current_viewed_team];
         display_names[current_viewed_team].remove();
-        display_names.splice(current_viewed_team, current_viewed_team);
+        display_names.splice(current_viewed_team, 1);
         team_edit_pane.hide();
     });
 

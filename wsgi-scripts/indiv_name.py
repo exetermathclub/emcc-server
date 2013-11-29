@@ -1,17 +1,14 @@
 import cgi
 import sqlite3
-import os
-import hashlib
 import json
-import base64
 import imp
 auth = imp.load_source("auth", "/home/mathclub/public_html/wsgi-scripts/auth.py")
-from http import cookies
 
 def application(environ, start_response):
     # Open the srp databse connection
     conn = auth.initDB("/home/mathclub/public_html/wsgi-scripts/auth_srp.db")
     c = conn.cursor()
+    output = ""
 
     form = cgi.FieldStorage(
         fp=environ['wsgi.input'],
@@ -20,35 +17,37 @@ def application(environ, start_response):
     )
     
     # Get this user's session key
-    c.execute("SELECT sesskey FROM sesskeys WHERE id=?", (int(form['id'].value),))
+    c.execute("SELECT sesskey FROM grading_sesskeys WHERE id=?", (int(form['id'].value),))
     key = auth.dehexify(c.fetchone()[0])
+
+    individ = auth.decrypt(key, form['indiv_id'].value)
     
     # Close the database connection
     conn.close()
-    
-    # Open up the teams database
-    conn = sqlite3.connect('/home/mathclub/public_html/wsgi-scripts/teams.db')
-    c = conn.cursor()
-    
-    rowid = int(auth.decrypt(key, form['teamid'].value))
 
-    success = True
-    try:
-        c.execute("UPDATE teams SET paid=? WHERE id=?", (int(form['paid'].value), rowid))
-    except sqlite3.OperationalError:
-        success = False
-    
-    output = json.dumps({
-        "success": success
-    })
+    # Open up the teams database
+    if len(individ) > 1:
+        teamid = int(str(individ[:-1]))
+        conn = sqlite3.connect('/home/mathclub/public_html/wsgi-scripts/teams.db')
+        c = conn.cursor()
+        
+        c.execute("SELECT members FROM teams WHERE id = ?", (teamid,))
+        row = c.fetchone()
+
+        if row is not None:
+            # Get all the team info
+            indiv_name = json.loads(row[0])[int(str(individ)[-1])-1]
+            
+            # Write it all
+            output = auth.encrypt(key, json.dumps(indiv_name))
 
     # Close the database connection
-    conn.commit()
     conn.close()
 
     # Actually write everything.
     status = '200 OK'
     response_headers = [('Content-type', 'application/json'),
-                        ('Content-Length', str(len(output)))]
+                        ('Content-Length', str(len(output))),
+                        ('Cache-Control', 'no-cache')]
     start_response(status, response_headers)
     return [output]

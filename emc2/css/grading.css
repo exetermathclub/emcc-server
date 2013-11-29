@@ -1,3 +1,11 @@
+#login {
+    display: inline-block;
+}
+
+#loggedin {
+    display: none;
+}
+
 .field_wrapper {
     padding: 5px;
 }
@@ -13,48 +21,6 @@ input.field {
     height: 25px;
     border: 1px solid black;
     padding: 0px 2px 0px 2px;
-}
-
-a.field {
-    color: #00F;
-    color: -webkit-link;
-}
-
-.team {
-    cursor: pointer;
-    color: #00B;
-    font-size: 20px;
-}
-
-.team:hover {
-    text-decoration: underline;
-}
-
-.team_name {
-    font-size: 20px;
-}
-
-#delete {
-    color: #900;
-    background-color: #FFFFFF;
-    border-radius: 2px;
-    border: 1px solid #888;
-}
-
-#delete:hover {
-    background:#F00;
-    color: #FFFFFF;
-    background-image: -moz-linear-gradient(#dc5f59, #b33630);
-    background-image: -webkit-linear-gradient(#dc5f59, #b33630);
-    background-image: linear-gradient(#dc5f59, #b33630);
-}
-
-#team_edit_pane {
-    display: none;
-}
-
-#feng {
-    padding-left: 20px;
 }
 
 button.field {
@@ -90,7 +56,27 @@ button {
     font-family: georgia, times, serif;
 }
 
-.dialog {
+#accuracy {
+    display: none;
+}
+
+#team {
+    display: none;
+}
+
+#guts {
+    display: none;
+}
+
+.round {
+    display: none;
+}
+
+#round1 {
+    display: block;
+}
+
+#dialog {
     z-index: 5;
     width: 200px;
     padding: 30px;
@@ -104,22 +90,3 @@ button {
     display: none;
 }
 
-.cover {
-    z-index: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.5;
-    background-color: #888;
-    display: none;
-}
-
-#new {
-    margin-top: 5px;
-}
-
-.show_when_indiv {
-    display: none;
-}

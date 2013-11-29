@@ -81,10 +81,11 @@
 
   searchTeamPrefix = function(search_prefix) {
     var search_length, team, _i, _len;
+    search_prefix = search_prefix.toLowerCase();
     search_length = search_prefix.length;
     for (_i = 0, _len = teams.length; _i < _len; _i++) {
       team = teams[_i];
-      if (team.name.slice(0, +(search_length - 1) + 1 || 9e9) === search_prefix) {
+      if (team.name.slice(0, +(search_length - 1) + 1 || 9e9).toLowerCase() === search_prefix) {
         search_found = true;
         highlighted = team.el;
         doc_body.scrollTop(team.el.addClass("highlighted").offset().top);
@@ -93,13 +94,17 @@
         };
       }
     }
+    return function(x) {
+      return x;
+    };
   };
 
   searchTeamExact = function(search) {
     var team, _i, _len;
+    search = search.toLowerCase();
     for (_i = 0, _len = teams.length; _i < _len; _i++) {
       team = teams[_i];
-      if (team.name === search) {
+      if (team.name.toLowerCase() === search) {
         search_found = true;
         highlighted = team.el;
         doc_body.scrollTop(team.el.addClass("highlighted").offset().top);
@@ -108,6 +113,9 @@
         };
       }
     }
+    return function(x) {
+      return x;
+    };
   };
 
   window.onload = function() {

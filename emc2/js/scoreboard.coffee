@@ -49,21 +49,25 @@ formatTeam = (team) ->
   .append($("<div>").addClass("team_progressbar").width(((team.progress - team.score)/MAX_SCORE * 100) + "%")))
 
 searchTeamPrefix = (search_prefix) ->
+  search_prefix = search_prefix.toLowerCase()
   search_length = search_prefix.length
   for team in teams
-    if team.name[0..(search_length-1)] == search_prefix
+    if team.name[0..(search_length-1)].toLowerCase() == search_prefix
       search_found = true
       highlighted = team.el
       doc_body.scrollTop team.el.addClass("highlighted").offset().top
       return -> searchTeamPrefix search_prefix
+  return (x) -> x
 
 searchTeamExact = (search) ->
+  search = search.toLowerCase()
   for team in teams
-    if team.name == search
+    if team.name.toLowerCase() == search
       search_found = true
       highlighted = team.el
       doc_body.scrollTop team.el.addClass("highlighted").offset().top
       return -> searchTeamExact search
+  return (x) -> x
 
 window.onload = ->
   # Start syncing remaining time with the server's

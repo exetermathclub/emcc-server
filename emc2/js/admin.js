@@ -44,8 +44,8 @@ $(function () {
                 .click(function () {
                     if (confirm("Are you sure you want to delete " + row[2] + "?")) {
                         $.ajax({
-                            "url": "../wsgi-scripts/delete_team.py",
-                            "data": {
+                            url: "../wsgi-scripts/delete_team.py",
+                            data: {
                                 "teamid": JSON.stringify(encrypt(srp_key, row[0].toString())),
                                 "id": srp_id
                             },

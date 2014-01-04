@@ -47,7 +47,8 @@ def application(environ, start_response):
 
     status = '200 OK'
     response_headers = [('Content-type', 'application/json'),
-                        ('Content-Length', str(len(output)))]
+                        ('Content-Length', str(len(output))),
+                        ('Cache-Control', 'no-cache')]
     if correct:
         response_headers.append(('Set-Cookie', cookie.output().replace('Set-Cookie: ', '', 1)))
     start_response(status, response_headers)

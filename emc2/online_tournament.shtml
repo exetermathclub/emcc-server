@@ -4,14 +4,15 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
     <head>
-        <title>Online Tournament</title>
+        <title>Contest Information</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/emcc.css">
-        
+        <link rel="stylesheet" type="text/css" href="css/contest_information.css">
+
         <!-- Google Analytics -->
         <script type="text/javascript">
              (function(i, s, o, g, r, a, m) {
@@ -37,11 +38,9 @@
 
 <!--#include virtual="bars.html" -->
         <div id="content">
-            <div class="post_title">
-                Online Tournament
-            </div>
+            <div class="post_title">Online Tournament</div>
             <div class="post">
-                EMCC online tournament will be available here during the contest. Please register using the normal interface with your account.
+                The EMCC Online Tournament is the online version of the EMCC. You submit your answers through an online interface which will be available here during the EMCC. It is held simultaneously as the EMCC, and the problems are identical. It is also <b>free.</b> Results will be published alongside the on-site results. However, the result of the online competition is more casual than the on-site one. For instance, there will be no prizes awarded to online tournament winners.
             </div>
         </div>
 <!--#include virtual="footer.html" -->

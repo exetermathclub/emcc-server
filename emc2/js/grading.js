@@ -180,7 +180,7 @@ $(function () {
 
     // Serialize all the scores into JSON format.
     function serializeScores() {
-        var scores = [], score = 0, guts_round;
+        var scores = {}, score = 0, guts_round;
         switch (round_el.val()) {
         case "speed":
             speed_inputs_el.each(function (index) {
@@ -203,7 +203,7 @@ $(function () {
         default:
             guts_round = gutsround_el.val();
             $("#round" + guts_round + " input").each(function (index) {
-                scores[3 * parseInt(guts_round) + index - 2] = this.checked;
+                scores[3 * parseInt(guts_round) + index - 2] = (this.checked ? guts_values[parseInt(guts_round) - 1] : 0);
                 if (this.checked) {
                     score += guts_values[parseInt(guts_round) - 1];
                 }
@@ -211,7 +211,8 @@ $(function () {
         }
         return {
             scores: scores,
-            score: score
+            score: score,
+            progress: guts_round
         };
     }
 
@@ -226,12 +227,12 @@ $(function () {
     // We submit our scores.
     submit_el.click(function () {
         var serializedScores = serializeScores(), round = round_el.val(), guts_round = gutsround_el.val();
-        if (teamname_el.val() === "") {
+        if (teamname_el.text() === "") {
             teamname_el.text("Enter a valid team ID.");
             teamid_el.focus();
             return false;
         }
-        if (round !== "team" && round !== "guts" && individ_name.val() === "") {
+        if (round !== "team" && round !== "guts" && indivname_el.text() === "") {
             indivname_el.text("Enter a valid individual ID.");
             individ_el.focus();
             return false;
@@ -246,7 +247,8 @@ $(function () {
                     "indiv_id": parseInt(individ_el.val()),
                     "round": round,
                     "scores": serializedScores.scores,
-                    "score": serializedScores.score
+                    "score": serializedScores.score,
+                    "progress": serializedScores.progress
                 })))
             },
             success: function (data) {

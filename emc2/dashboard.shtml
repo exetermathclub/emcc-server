@@ -81,6 +81,14 @@
                     Exeter, NH 03833
                 </address>
             </div>
+            <div class="post_title">
+                Score Viewing
+            </div>
+            <div class="post">
+                Scores will be available here after the contest.
+                <div id="scores">
+                </div>
+            </div>
         </div>
 
         <div class="dialog">
@@ -92,7 +100,7 @@
 <!--#include virtual="footer.html" -->
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script type="text/javascript" src="js/dashboard.min.js"></script>
+        <script type="text/javascript" src="js/dashboard.js"></script>
         <script type="text/javascript">
             $("#archive_link").click(function () {
                 "use strict";

@@ -79,6 +79,17 @@ $(function () {
                 dataType: "json",
                 success: function (data) {
                     if (data.correct) {
+                        // Parse the query string to see if we are given a continue url
+                        var qs_pairs = location.search.substring(1).split("&");
+                        for (var i = 0; i < qs_pairs.length; i += 1) {
+                          var pair = qs_pairs[i].split("=");
+                          if (decodeURIComponent(pair[0]) == "continue") {
+                            location.href = decodeURIComponent(pair[1]);
+                            return;
+                          }
+                        }
+
+                        //If we're not, continue normally to the dashboard
                         window.location.href = "dashboard.shtml";
                     } else {
                         tip.text("Incorrect username or password.");

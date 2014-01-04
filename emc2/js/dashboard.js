@@ -47,7 +47,10 @@ $(function () {
 
         if (id === current_viewed_team) {
             //If we're already here, toggle the edit pane instead
-            if (team_edit_pane.css("display") !== "none") team_edit_pane.hide();
+            if (team_edit_pane.css("display") !== "none") {
+                edit();
+                team_edit_pane.hide();
+            }
             else team_edit_pane.show();
         }
         else {
@@ -173,6 +176,11 @@ $(function () {
             method: "POST",
             data: getData("edit")
         });
+        teams[current_viewed_team].name = team_name.val();
+        teams[current_viewed_team].members = members;
+        teams[current_viewed_team].participation = team_participation.val() === "On-Site";
+        teams[current_viewed_team].individual = team_individual.prop('checked');
+        display_names[current_viewed_team].text(team_name.val());
     }
 
     function delete_team(team_id) {
@@ -208,11 +216,6 @@ $(function () {
             team_new.show();
         } else {
             edit();
-            teams[current_viewed_team].name = team_name.val();
-            teams[current_viewed_team].members = members;
-            teams[current_viewed_team].participation = team_participation.val() === "On-Site";
-            teams[current_viewed_team].individual = team_individual.prop('checked');
-            display_names[current_viewed_team].text(team_name.val());
         }
         team_edit_pane.hide();
     });
@@ -262,12 +265,101 @@ $(function () {
         team_edit_pane.show();
     });
 
+    // Get the scores.
+    $.getJSON("../wsgi-scripts/getscores.py", function (data) {
+        var team, scores_el = $("#scores"), member, i, row, k, j, table;
+        for (k = 0; k < data.length; k += 1) {
+            team = data[k];
+            table = $("<tbody>");
+            // Display the team name
+            scores_el.append($("<h2>").text(team.name));
+            row = $("<tr>");
+            // Empty first cell
+            row.append($("<th>"));
+            // Display the round name
+            scores_el.append($("<h3>").text("Speed"));
+            // Add the 25 speed round columns
+            for (i = 1; i <= 25; i += 1) {
+                row.append($("<th>").text(i));
+            }
+            row.append($("<th>").text("Speed Total"));
+            table.append(row);
+            for (j = 0; j < team.members.length; j += 1) {
+                member = team.members[j];
+                row = $("<tr>");
+                row.append($("<td>").text(member.name));
+                for (i = 1; i <= 25; i += 1) {
+                    row.append($("<td>").text(+member.speed_scores[i]));
+                }
+                row.append($("<td>").text(member.speed_score));
+                table.append(row);
+            }
+            scores_el.append($("<table>").append(table));
+
+            table = $("<tbody>");
+            // Display the round name
+            scores_el.append($("<h3>").text("Accuracy"));
+            row = $("<tr>");
+            // Empty first cell
+            row.append($("<th>"));
+            for (i = 1; i <= 10; i += 1) {
+                row.append($("<th>").text(i));
+            }
+            row.append($("<th>").text("Accuracy Total"));
+            table.append(row);
+            // Display the member names
+            for (j = 0; j < team.members.length; j += 1) {
+                member = team.members[j];
+                row = $("<tr>");
+                row.append($("<td>").text(member.name));
+                for (i = 1; i <= 10; i += 1) {
+                    row.append($("<td>").text(+member.accuracy_scores[i]));
+                }
+                row.append($("<td>").text(member.accuracy_score));
+                table.append(row);
+            }
+            scores_el.append($("<table>").append(table));
+
+            table = $("<tbody>");
+            row = $("<tr>");
+            scores_el.append($("<h3>").text("Team"));
+            for (i = 1; i <= 10; i += 1) {
+                row.append($("<th>").text(i));
+            }
+            row.append($("<th>").text("Team Total"));
+            table.append(row);
+            row = $("<tr>");
+            for (i = 1; i <= 10; i += 1) {
+                row.append($("<td>").text(+team.team_scores[i]));
+            }
+            row.append($("<td>").text(team.team_score));
+            table.append(row);
+            scores_el.append($("<table>").append(table));
+            
+            table = $("<tbody>");
+            row = $("<tr>");
+            scores_el.append($("<h3>").text("Guts"));
+            for (i = 1; i <= 24; i += 1) {
+                row.append($("<th>").text(i));
+            }
+            row.append($("<th>").text("Guts Total"));
+            table.append(row);
+            row = $("<tr>");
+            for (i = 1; i <= 24; i += 1) {
+                row.append($("<td>").text(+team.guts_scores[i]));
+            }
+            row.append($("<td>").text(team.guts_score));
+            table.append(row);
+            scores_el.append($("<table>").append(table));
+        }
+    });
+
     $.ajax({
         url: "../wsgi-scripts/checkemail.py",
         method: "GET",
         dataType: "json",
         success: function (data) {
-            if (!data.success && data.error == 1) {
+            if (!data.success && data.error === 1) {
                 $(".dialog").show();
                 $(".cover").show();
                 $("#dialog_submit").click(function () {
@@ -294,4 +386,6 @@ $(function () {
             }
         }
     });
+
+    $(window).unload(edit);
 });

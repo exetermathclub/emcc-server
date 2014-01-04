@@ -40,12 +40,15 @@ def application(environ, start_response):
         c.execute("SELECT progress, answers, score FROM guts WHERE team_id = ?", (score_info['team_id'],))
         row = c.fetchone()
         progresses = [18, 42, 72, 108, 150, 198, 246, 300]
-        progress = progresses[int((len(score_info['scores']) - 1) / 3) - 1]
+        progress = progresses[int(score_info['progress']) - 1]
         if progress > row[0]:
-            scores = json.dumps(json.loads(row[1]) + score_info['scores'])
             score = row[2] + score_info['score']
-            c.execute("UPDATE guts SET answers = ?, progress = ?, score = ? WHERE team_id = ?", (scores, progress, score, score_info['team_id']))
-    conn.commit();
+        else:
+            score = row[2]
+        scores = json.loads(row[1]).copy()
+        scores.update(score_info['scores'])
+        c.execute("UPDATE guts SET answers = ?, progress = ?, score = ? WHERE team_id = ?", (json.dumps(scores), progress, score, score_info['team_id']))
+    conn.commit()
     
     # Close the database connection
     conn.close()

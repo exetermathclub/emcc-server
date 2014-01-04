@@ -123,3 +123,16 @@ button {
 .show_when_indiv {
     display: none;
 }
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+td {
+    width: 20px;
+    text-align: center;
+}
